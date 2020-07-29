@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../../component/css/jquery-1.12.1-ui.css">
+    <title>產品編輯頁</title>
+    <script charset="utf-8" src="../../../../component/js/editor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="../../../../component/js/editor/lang/zh-TW.js"></script>
+    <script src="../../../../component/js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        KindEditor.ready(function (K) {
+            window.editor = K.create('#editor_1');
+            window.editor = K.create('#editor_2');
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <section style="width:930px;height:200px">
+                <div style="float:left;width:300px;">
+                    <h3>基本資料</h3>
+                    中文書名：
+                    <input type="text" name="bknamech" />
+                    </br>英文書名：
+                    <input type="text" name="bknameen" />
+                    </br>
+                    ISBN：
+                    <input type="text" name="bkisbn" />
+                    </br>作者/譯者ID(F)：
+                    <input type="text" name="authorid" />
+                    </br>
+                    出版日期：
+                    <input type="date" name="bkpubdate" />
+                    </br>出版社：
+                    <input type="text" name="bkpublisher" />
+                    </br>
+                </div>
+                <div style="float:left;width:300px;">
+                    <h3>進階資料</h3>
+                    書籍系列：
+                    <input type="text" name="bkseries" />
+                    </br>
+                    書籍分類：
+                    <input type="text" name="bkseries" />
+                    </br>
+                    語言：
+                    <input type="text" name="bklang" />
+                    </br>
+                    頁數：
+                    <input type="text" name="bkpage/">
+                    </br>版本：
+                    <input type="text" name="bkver" />
+                    </br>大小：
+                    <input type="text" name="bksize" />
+                    </br>重量：
+                    <input type="text" name="bkwgt" />
+                    </br>
+                    封腰：
+                    <input type="text" name="bkskin" />
+                    </br>
+                </div>
+                <div "float:right;width:300px;">
+                    <h3>庫存管理</h3>
+                    產品狀態：
+                    <input type="radio" name="flag" value="male" /> Male
+                    <input type="radio" name="flag" value="female" /> Female
+                    <input type="radio" name="flag" value="other" /> Other
+                    </br>
+                    庫存：
+                    <input type="text" name="prodstock" />
+                    </br>成本：
+                    <input type="text" name="prodcost" />
+                    </br>售價：
+                    <input type="text" name="prodprice" />
+                    </br>折扣：
+                    <input type="text" name="proddisc" />
+                </div>
+            </section>
+            <section style="width:930px;">
+                <div>
+                    <h3>編輯資料</h3>
+                    書籍目錄：
+                    <textarea id="editor_1" name="bkmenu" style="width:450px;height:300px;float: left"></textarea>
+                    </br>
+                    書籍簡介：
+                    <textarea id="editor_2" name="bkintro" style="width:450px;height:300px;float: right"></textarea>
+                    </br>
+                </div>
+                <div>
+                    <h3>上傳檔案</h3>
+                    電子書檔案：
+                    <input type="file" name="bkefile" />
+                    </br>
+                    產品圖片：
+                    <input type="file" name="prodimg" />
+                    </br>
+                </div>
+            </section>
+
+            <input type="submit" name="proddisc" />
+        </form>
+        </section>
+    </div>
+</body>
+
+</html>

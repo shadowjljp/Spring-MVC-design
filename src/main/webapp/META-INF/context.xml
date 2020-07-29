@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+<!-- Local -->
+<!-- 	<Resource name="jdbc/ReadShareDB" auth="Container" -->
+<!-- 		type="javax.sql.DataSource" maxTotal="100" maxIdle="30" -->
+<!-- 		maxWaitMillis="500000" username="sa" password="passw0rd" -->
+<!-- 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" -->
+<!-- 		url="jdbc:sqlserver://localhost:1433;DatabaseName=ReadShareDB" /> -->
+
+<!-- 192.168.30.63 -->
+<!-- 	<Resource name="jdbc/ReadShareDB" auth="Container" -->
+<!-- 		type="javax.sql.DataSource" maxTotal="100" maxIdle="30" -->
+<!-- 		maxWaitMillis="500000" username="sa" password="passw0rd" -->
+<!-- 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" -->
+<!-- 		url="jdbc:sqlserver://192.168.30.63:1433;DatabaseName=ReadShareDB" /> -->
+
+<!-- 雲端 -->
+	<Resource name="jdbc/ReadShareDB" auth="Container"
+		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
+		maxWaitMillis="500000" username="readshare" password="eeit@102"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://readshare.database.windows.net:1433;database=readSharedb" />
+
+</Context>

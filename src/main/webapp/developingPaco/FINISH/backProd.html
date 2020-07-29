@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--<jsp:useBean id="idSearch" class="bookpage.bookDAO" scope="page" />
+<jsp:setProperty property="getbookid" name="idSearch" value="<%=bookid%>" />-->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>書籍列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        .booktitle {
+            color: #8b6257
+        }
+
+        tr:hover {
+            background-color: #deb887;
+            color: #00f
+        }
+
+        td:hover {
+            text-decoration: underline;
+            color: #00f
+        }
+
+        table {
+            border: 1;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center
+        }
+
+        .eventtitle {
+            width: 900px
+        }
+
+        table td,
+        th {
+            height: 50px;
+            width: 200px;
+            vertical-align: middle
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <section>
+            <div style="font-size: 150%;align-items: center">
+                <form action='<c:url value="/bookSearchResult.controller" />' method="get">
+                    <span>
+                        <input class="search-txt" type="text" name="keyWord" placeholder="  搜尋書名/作者/ISBN">
+                        
+                    </span>
+
+                    <button class="search-btn" type="submit">
+                        <img src="../../../../component/images/searchBT.png "/>
+                    </button>
+                </form>
+            </div>
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>產品編號</th>
+                        <th>書名</th>
+                        <th>出版日期</th>
+                        <th>作者</th>
+                        <th>ISBN</th>
+                        <th>編輯</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10808040000312</td>
+                        <td>我是一本書我是一本書我是一本書我是一本書我是一本書我是一本書</td>
+                        <td>2016-07-09</td>
+                        <td>王老急</td>
+                        <td>9789867771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1070804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2018-12-09</td>
+                        <td>老急王</td>
+                        <td>9789866771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1040804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2015-12-09</td>
+                        <td>急王老</td>
+                        <td>9789866771555</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1030804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2012-01-09</td>
+                        <td>王老急</td>
+                        <td>7789866771555</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10808040000312</td>
+                        <td>我是一本書我是一本書我是一本書我是一本書我是一本書我是一本書</td>
+                        <td>2016-07-09</td>
+                        <td>王老急</td>
+                        <td>9789867771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1070804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2018-12-09</td>
+                        <td>老急王</td>
+                        <td>9789866771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1040804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2015-12-09</td>
+                        <td>急王老</td>
+                        <td>9789866771555</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1030804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2012-01-09</td>
+                        <td>王老急</td>
+                        <td>7789866771555</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10808040000312</td>
+                        <td>我是一本書我是一本書我是一本書我是一本書我是一本書我是一本書</td>
+                        <td>2016-07-09</td>
+                        <td>王老急</td>
+                        <td>9789867771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1070804000999</td>
+                        <td>我是2本書我是2本書我是2本書</td>
+                        <td>2018-12-09</td>
+                        <td>老急王</td>
+                        <td>9789866771623</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>

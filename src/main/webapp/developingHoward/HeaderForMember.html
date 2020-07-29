@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Header-登入</title>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋書名/作者/ISBN">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>
+                                <!-- <span>作者</span> -->
+                                <input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <!-- <span>ISBN</span> -->
+                                <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/MemberPhoto/Howard.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+
+
+</body>
+
+</html>

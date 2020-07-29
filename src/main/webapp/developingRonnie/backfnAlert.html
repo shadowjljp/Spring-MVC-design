@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../component/css/jquery-ui.css">
+    <link rel="stylesheet" href="../component/css/base.css">
+    <script src="../component/js/jquery-1.12.4.js"></script>
+    <script src="../component/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".widget input[type=button], .widget a, .widget button").button();
+            $("button, input, a").click(function (event) {
+                event.preventDefault();
+            });
+
+        });
+    </script>
+    <!-- <script>
+        function show() {
+            document.getElementById("showtable").setAttribute("style", "display:'hidden',1.0s");
+        }
+    </script> -->
+    <style>
+        .table2 {
+            display: show;
+
+        }
+
+        .table1 {
+            display: none;
+        }
+
+        .test {
+            background-color:  rgb(231, 193, 193);
+            border: solid;
+            border-radius: 30px;
+            width: 800px;
+            height: 400px;
+            text-align: center;
+            left: 200px;
+            top: 100px;
+        }
+
+        .test1{
+            position: fixed; 
+            top: 600px; 
+            left:600px;
+            background-color: #8B6257;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table1">
+        <table class="test">
+            <thead class="classInternal">
+                <tr>
+                    <th title="Field #1">編號</th>
+                    <th title="Field #2">時間</th>
+                    <th title="Field #3">事項</th>
+                    <th title="Field #4">最後修改日</th>
+                    <th title="Field #5">備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<br>
+    <div style="text-align: center; margin-top: 80px" >
+        <span class="widget">
+            <input class="ui-button ui-widget ui-corner-all test1" type="submit" value=" " 
+            style="border-radius: 10px; animation:xmove 1.6s; " id="but">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#but").on("click",function(){
+            $(".table1").toggle(".table2");
+        })
+
+        })
+
+    </script>
+</body>
+
+</html>

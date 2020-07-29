@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<title>我的書櫃</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BookCase</title>
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+
+    <link rel="stylesheet" href="../component/js/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="../component/js/slick-1.8.1/slick/slick-theme.css">
+
+    <!--memberCenter 選單-->
+    <link rel="stylesheet" href="../component/css/memberCenter.css">
+    <!---->
+
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+    <script src="../component/js/bootstrap.min.js"></script>
+    <script src="../component/js/jquery-ui-effects.min.js"></script>
+
+    <script src="../component/js/slick-1.8.1/slick/slick.min.js"></script>
+    
+    <style>
+        .body {
+            background-color: #FFF9EF;
+            font-family: 微軟正黑體;
+        }
+
+        .bookCase {
+            margin: auto;
+            width: 1200px;
+            height: 1000px;
+            background-color: #FFF9EF;
+            margin-top: 10%;
+        }
+
+        .book {
+            height: 200px;
+            width: 140px;
+        }
+        .book-title{
+            font-weight: bold;
+            color: black;
+            line-height: 2em;
+            overflow: hidden;
+        }
+
+        .td {
+            padding: 50px;
+        }
+       
+    </style>
+</head>
+
+<body class="body">
+
+    <div class="wrapper">
+        <!-- wrapper start -->
+
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋書名/作者/ISBN">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>
+                                <!-- <span>作者</span> -->
+                                <input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <!-- <span>ISBN</span> -->
+                                <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/MemberPhoto/Howard.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+       
+        <div class="container">
+            <!-- container start -->
+            <div class="bookCase">
+
+                <table class="table">
+
+                    <tr>
+                        <td class="td">
+                            <a href="https://www.youtube.com/">
+                                <img src="../component/images/BookCase/honorCity.jpg" alt="honorCity" class="book">
+                                <p class="book-title">光榮城市,柯文哲的進步價值</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/algorithm.jpg" alt="algorithm" class="book">
+                                <p class="book-title">演算法的圖鑑</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/catcher.jpg" alt="catcher" class="book">
+                                <p class="book-title">The Catcher in the Rye麥田捕手</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/child.jpg" alt="child" class="book">
+                                <p class="book-title">你的孩子不是你的孩子</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/courage.jpg" alt="courage" class="book">
+                                <p class="book-title">被討厭的勇氣</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/america.jpg" alt="america" class="book">
+                                <p class="book-title">美國的反制傳統</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/orange.jpg" alt="orange" class="book">
+                                <p class="book-title">蘋果橘子經濟學</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/elaiza1.jpg" alt="elaiza1" class="book">
+                                <p class="book-title">Jimmy,愛的AV女優</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/erinamano.jpg" alt="erinamano" class="book">
+                                <p class="book-title">Jimmy,愛的AV女優2</p>
+                            </a>
+                        </td>
+                        <td class="td">
+                            <a href="#">
+                                <img src="../component/images/BookCase/nana.jpg" alt="nana" class="book">
+                                <p class="book-title">Jimmy,愛的AV女優3</p>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+            <!-- container end -->
+        </div>
+         <!--memberCenter 選單-->
+         <div class="page-container">
+
+            <div class="sidebar-menu">
+                <div class="memberlogo">
+                    <!--Header內為內縮圖區-->
+                    <a href="#" class="sidebar-icon">
+                        <img src="../component/images/MemberCenter-icon/bars-solid.svg" alt="">
+                    </a>
+                    <!-- <a href="#">
+                    <span id="memberlogo" class="fa fa-html5 fa-5x"></span>
+                </a> -->
+                </div>
+                <div class="bar-icon-border"></div>
+                <div class="MCmenu">
+                    <ul id="memberCenter-menu">
+                        <li id="menu-home">
+                            <a href="#" id="a">
+                                <img src="../component/images/MemberCenter-icon/home-solid.svg" alt="">
+                                <span id="span">回首頁</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                <img src="../component/images/MemberCenter-icon/user-circle-solid.svg" alt="">
+                                <span>個人資料修改</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="MyProject.html">
+                                         資料修改1</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                         資料修改2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/users-solid.svg" alt="">
+                                <span>好友功能</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="friendList.html">好友清單</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">好友列表2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/book-open-solid.svg" alt="">
+                                <span>個人書櫃</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="bookCase.html">我的書櫃</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">書櫃2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/list-solid.svg" alt="">
+                                <span>訂單查詢</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">訂單1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">訂單2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/money-check-alt-solid.svg" alt="">
+                                <span>電子折價卷</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">折價卷1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">折價卷2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/h-square-solid.svg" alt="">
+                                <span>願望清單</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="hopeList.html">願望清單列表</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">願望2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/funnel-dollar-solid.svg" alt="">
+                                <span>我的募資</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">募資1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">募資2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/smile-beam-solid.svg" alt="">
+                                <span>我的活動</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">活動1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">活動2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--memberCenter 選單-end-->
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </footer>
+        <!-- wrapper end -->
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            var toggle = true;
+
+            $(".sidebar-icon").click(function () {
+                if (toggle) {
+                    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    $("#menu span").css({ "position": "absolute" });
+                }
+                else {
+                    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    setTimeout(function () {
+                        $("#menu span").css({ "position": "relative" });
+                    }, 400);
+                }
+
+                toggle = !toggle;
+            });
+        </script>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36251023-1']);
+            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </div>
+</body>
+
+</html>

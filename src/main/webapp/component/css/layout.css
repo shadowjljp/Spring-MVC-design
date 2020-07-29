@@ -1,0 +1,48 @@
+body{
+    height: auto;
+    overflow: auto;
+}
+.wrapper{
+    width: 100vw;
+    /* height: 100vh; */
+    /* background-color:#FAFAFA; */
+    background-color:rgb(255, 249, 239);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* overflow: auto; */
+    /* padding-bottom: 50px; */
+}
+.container{
+    /* background-color:#FAFAFA; */
+    width: 90%;
+    /* height: 100vh; */
+    background-color:rgb(255, 249, 239);
+    font-family: "Microsoft JhengHei";
+    margin: 0 auto;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* max-width: 1170px;    */
+    max-width: 1440px; 
+    /* overflow: auto; */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>願望清單</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--Header Footer css-->
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <!--Header Footer css END-->
+    <!--memberCenter 選單css-->
+    <link rel="stylesheet" href="../component/css/memberCenter.css">
+    <!--memberCenter 選單 END-->
+
+
+    <style>
+        .list {
+            font-family: 微軟正黑體;
+            margin: auto;
+            height: 1500px;
+            width: 820px;
+            margin-top: 10%;
+        }
+
+        .list-div {
+            margin: auto;
+        }
+
+        .h2 {
+            text-align: center;
+        }
+
+        .ul {
+            list-style-type: none;
+            width: 90%;
+            margin: auto;
+        }
+
+        .li {
+            list-style-type: none;
+            float: left;
+            height: 325px;
+            margin-left:5em; 
+            border-style: solid;
+            border-width: 1.5px;
+            border-color: #9d9d9d;
+            padding: 20px;
+        }
+
+        .text {
+            overflow: hidden;
+            font-weight: bold;
+            color: rgb(51, 50, 50);
+            width: 140px;
+            height: 2em;
+            line-height: 1em;
+            text-align: left;
+            border-width: 3px;
+            border-color: #8B6257;
+        }
+
+        .img {
+            height: 200px;
+            width: 140px;
+        }
+
+        .button {
+            width: 60px;
+            height: 40px;
+            border: 1px solid rgb(58, 56, 56);
+            border-radius: 10px;
+            background-color: rgb(226, 195, 184);
+        }
+
+        .button:hover {
+            border: 1.8px solid rgb(58, 56, 56);
+        }
+
+        .button-div {
+            margin: auto;
+            width: 125px;
+            height: 60px;
+        }
+
+        .oneLineHopeList {
+            height: 330px;
+            border: 2px solid black;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- wrapper start -->
+
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋書名/作者/ISBN">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>
+                                <!-- <span>作者</span> -->
+                                <input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <!-- <span>ISBN</span> -->
+                                <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/MemberPhoto/Howard.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+
+        <div class="container">
+            <!-- container start -->
+
+            <div class="list">
+                <div class="list-div">
+                    <h2 class="h2">願望清單</h2>
+                    <!--第一行-->
+                    <div class="oneLineHopeList">
+                        <div class="li">
+                            <a href="https://www.youtube.com/">
+                                <img src="../component/images/HopeList/wonderLand.jpg" alt="wonderLand" class="img">
+                                <p class="text">房思琪的初戀樂園</p>
+                            </a>
+                            <div class="button-div">
+                                <button class="button">移除</button>
+                                <button class="button">購買</button>
+                            </div>
+                        </div>
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/ThankYouForLate.jpg" alt="Late" class="img">
+                                <p class="text">謝謝你遲到了</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                        <divli class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/BlockChain.jpg" alt="BlockChain" class="img">
+                                <p class="text">區塊鏈革命</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                    </div>
+                    <!--第二行-->
+                    <div class="oneLineHopeList">
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/courage.jpg" alt="courage" class="img">
+                                <p class="text">被討厭的勇氣</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/orange.jpg" alt="orange" class="img">
+                                <p class="text">蘋果橘子經濟學</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/kind.jpg" alt="kind" class="img">
+                                <p class="text">你的善良必須有點鋒芒</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="oneLineHopeList">
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/negotiation.jpg" alt="negotiation" class="img">
+                                <p class="text">華頓商學院最受歡迎的談判課</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/taiwanHistory.jpg" alt="taiwanHistory" class="img">
+                                <p class="text">臺灣史上最有梗的臺灣史</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/BlackHole.jpg" alt="BlackHole" class="img">
+                                <p class="text">關係黑洞</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="oneLineHopeList">
+                        <div class="li">
+                            <a href="#">
+                                <img src="../component/images/HopeList/IndustrialRevolution.jpg" alt="IndustrialRevolution" class="img">
+                                <p class="text">第四次工業革命</p>
+                                <div class="button-div">
+                                    <button class="button">移除</button>
+                                    <button class="button">購買</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- container end -->
+        </div>
+        <!--memberCenter 選單-->
+        <div class="page-container">
+
+            <div class="sidebar-menu">
+                <div class="memberlogo">
+                    <!--Header內為內縮圖區-->
+                    <a href="#" class="sidebar-icon">
+                        <img src="../component/images/MemberCenter-icon/bars-solid.svg" alt="">
+                    </a>
+                    <!-- <a href="#">
+                    <span id="memberlogo" class="fa fa-html5 fa-5x"></span>
+                </a> -->
+                </div>
+                <div class="bar-icon-border"></div>
+                <div class="MCmenu">
+                    <ul id="memberCenter-menu">
+                        <li id="menu-home">
+                            <a href="#" id="a">
+                                <img src="../component/images/MemberCenter-icon/home-solid.svg" alt="">
+                                <span id="span">回首頁</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                <img src="../component/images/MemberCenter-icon/user-circle-solid.svg" alt="">
+                                <span>個人資料修改</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="MyProject.html">
+                                        資料修改1</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        資料修改2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/users-solid.svg" alt="">
+                                <span>好友功能</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="friendList.html">好友清單</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">好友列表2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/book-open-solid.svg" alt="">
+                                <span>個人書櫃</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="bookCase.html">我的書櫃</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">書櫃2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/list-solid.svg" alt="">
+                                <span>訂單查詢</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">訂單1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">訂單2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/money-check-alt-solid.svg" alt="">
+                                <span>電子折價卷</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">折價卷1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">折價卷2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/h-square-solid.svg" alt="">
+                                <span>願望清單</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="hopeList.html">願望清單列表</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">願望2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/funnel-dollar-solid.svg" alt="">
+                                <span>我的募資</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">募資1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">募資2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-academico">
+                            <a href="#">
+                                <img src="../component/images/MemberCenter-icon/smile-beam-solid.svg" alt="">
+                                <span>我的活動</span>
+                                <span class="fa fa-angle-right" style="float: right"></span>
+                            </a>
+                            <ul id="menu-academico-sub">
+                                <li id="menu-academico-avaliacoes">
+                                    <a href="#">活動1</a>
+                                </li>
+                                <li id="menu-academico-boletim">
+                                    <a href="#">活動2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--memberCenter 選單-end-->
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </footer>
+        <!-- wrapper end -->
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            var toggle = true;
+
+            $(".sidebar-icon").click(function () {
+                if (toggle) {
+                    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    $("#menu span").css({ "position": "absolute" });
+                }
+                else {
+                    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    setTimeout(function () {
+                        $("#menu span").css({ "position": "relative" });
+                    }, 400);
+                }
+
+                toggle = !toggle;
+            });
+        </script>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36251023-1']);
+            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>享讀</title>
+    <!--css link-->
+    <link rel="stylesheet" href="../component/css/jquery-1.12.1-ui.css">
+    
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    
+    <link rel="stylesheet" href="../component/css/search.css">
+    <link rel="stylesheet" href="../component/css/bootstrap.min3.3.7.css">
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+    <script src="../component/js/highcharts.js"></script>
+    <script src="../component/js/exporting.js"></script>
+    <script src="../component/export-data.js"></script>
+
+    <style>
+        .booktitle {
+            height: 200px;
+        }
+
+        .area2 {
+            height: 850px;
+            width: 1040px;
+            border-bottom: black 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <section class="container">
+            <section class="booktitle">
+                <div style="float: left;width: 700px">
+                    <h2>會員資料統計</h2>
+                </div>
+                <div style="float: right;width: 300px">
+                    <div style="float: left">
+                        <h3>OOOOOOOOOOOOOOOOO</h3>
+                        <h3>XXXXXXXXXXXXXXXXX</h3>
+                    </div>
+                </div>
+            </section>
+
+            <div class="area2">
+                <div style="height:420px;border-bottom:solid green 2px">
+                    <div id="age" style="width: 490px; height: 400px;float: left"></div>
+                    <div id="gender" style="width: 490px; height: 400px;float: right"></div>
+                </div>
+                <div>
+                    <div id="planpercent" style="width: 490px; height: 400px;float: left"></div>
+                    <div id="planmoney" style="width: 490px; height: 400px;float: right"></div>
+                </div>
+            </div>
+            <script>
+                // Build the chart
+                Highcharts.chart('age', {
+                    chart: {
+                        backgroundColor: '#FFF9EF',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: '年齡層'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: false
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: '20歲以下',
+                            y: 11.84
+                        }, {
+                            name: '20-30歲',
+                            y: 10.85
+                        }, {
+                            name: '30-40歲',
+                            y: 4.67
+                        }, {
+                            name: '40-50歲',
+                            y: 4.18
+                        }, {
+                            name: '50歲以上',
+                            y: 7.05
+                        }]
+                    }]
+                });
+                // Build the chart
+                Highcharts.chart('gender', {
+                    chart: {
+                        backgroundColor: '#FFF9EF',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: '性別'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: false
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: '男性',
+                            y: 61.41,
+                            sliced: true,
+                            selected: true
+                        },{
+                            name: '女性 ',
+                            y: 7.05
+                        }]
+                    }]
+                });
+                // Build the chart
+                Highcharts.chart('planpercent', {
+                    chart: {
+                        backgroundColor: '#FFF9EF',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: '居住地比例'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: false
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: '一',
+                            y: 60,
+
+                        }, {
+                            name: '二',
+                            y: 20
+                        }, {
+                            name: '三',
+                            y: 20
+                        }]
+                    }]
+                });
+                // Build the chart
+                Highcharts.chart('planmoney', {
+                    chart: {
+                        backgroundColor: '#FFF9EF',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: '消費金額比例'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: false
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: '一',
+                            y: 40,
+
+                        }, {
+                            name: '二',
+                            y: 20
+                        }, {
+                            name: '三',
+                            y: 40
+                        }]
+                    }]
+                });
+            </script>
+ 
+        </section>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分類編輯</title>
+    <link rel="stylesheet" href="../../../../component/css/base.css">
+    <link rel="stylesheet" href="../../../../component/css/back.css">
+    <style>
+    ul{
+        font-size: 20px;
+    }
+    input{
+        font-size: 20px;
+    }
+    .tree{
+        float:left;
+        border:2px solid green;
+
+    }
+    .addnew{
+        float:right;
+        border:2px solid blue;
+        width:300px;
+        height:250px
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="context">
+            <h2>書籍分類編輯</h2>
+            <div class="tree">
+                <ul class="level1">中文書<button id="2">編輯</button><button id="2">刪除</button>
+                    <ul class="level2"><input type="text" value="商業"><button id="2">編輯</button><button id="2">刪除</button>
+                        <ul class="level3">商業2 <button id="2">編輯</button><button id="2">刪除</button>
+                            <ul class="level4">商業3<button id="2">編輯</button><button id="2">刪除</button></ul>
+                        </ul>
+                    </ul>
+                    <ul class="level2">文學<button id="2">編輯</button><button id="2">刪除</button>
+                        <ul class="level3">翻譯小說<button id="2">編輯</button><button id="2">刪除</button>
+                            <ul class="level4">偵探<button id="2">編輯</button><button id="2">刪除</button></ul>    
+                        </ul>
+                    </ul>
+                </ul>
+                <ul class="level1">英文書<button id="2">編輯</button><button id="2">刪除</button>
+                </ul>
+            </div>
+            <div class=" addnew ">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+/* ----------------------------Section 1------------------------ */
+
+.section1 {
+    /* width: 85%; */
+    margin: auto;
+    margin-top: 95px;
+}
+
+.single-item>div img {
+    float: top;
+    margin: 5px auto;
+    /* width: 100%; */
+    width: 100%;
+    overflow: hidden;
+    /* height: 200px; */
+}
+
+/* ----------------------------Section 2------------------------ */
+
+.section2 {
+    /* width: 85%; */
+    margin: 5px auto;
+}
+
+.section2>div {
+    /* display: inline; */
+    position: relative;
+    /* float: left; */
+    width: 49%;
+    height: 300px;
+    /* background-color: blue; */
+    border: #8B6257 1px solid;
+}
+
+.section2>div+div {
+    position: absolute;
+    /* position: relative; */
+    top: 0px;
+    right: 0px;
+    /* display: inline; */
+    width: 49%;
+    height: 300px;
+    /* background-color: red; */
+    order: #8B6257 1px solid;
+}
+
+.fade>div {
+    text-align: center;
+    margin: auto;
+}
+
+.fade>div img {
+    /* width: 90%; */
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 270px;
+    display: inline;
+}
+
+/* section3----------------------------------- */
+
+.section3 {
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+}
+.section3>ul{
+    display:flex;
+    flex-wrap: wrap ;
+    width: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.section3 li{
+    margin-top: 10px;
+    margin-left: 6px;
+    padding: 0 8px;
+}
+.section3>ul>li>div {
+    background-color: white;
+    width: 178px;
+    /* height: 450px; */
+    /* border: 1px solid red;   */
+}
+
+/* 書封 */
+
+.section3>ul>li>div>a>img {
+    width: 174px;
+    height: 250px;
+    /* width: 20vw; */
+    /* border: 1px solid; */
+}
+
+/* 書名 */
+
+.divBookName {
+    margin-left: 5px;
+    margin-top: 8px;
+    display: block;
+    font-size: 17px;
+    color: black;
+    line-height: 20px;
+}
+
+/* 書名 作者 超連結的hover */
+
+.divBookName:hover {
+    font-weight: bold;
+}
+
+/* 書名超過第三行會消失的設定 */
+
+.divBookName {
+    height: 40px;
+    overflow: hidden;
+}
+
+/* 微調文字與li的關係 */
+
+.section3>ul>li>div div {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.divAuthor {
+    font-size: 12px;
+    /* color: #8B6257; */
+    color: black;
+}
+
+.divAuthor:hover {
+    font-weight: bold;
+}
+
+.divBookIntro {
+    font-size: 15px;
+    color: black;
+    line-height: 17px;
+}
+
+.divBookIntro {
+    font-size: 15px;
+    color: black;
+    /* line-height: 17px; */
+    height: 34px;
+    overflow: hidden;
+}
+
+.divBookBtZone {
+    /* background-color: green; */
+    border-top: #8B6257 solid 1.5px;
+}
+
+/* 願望清單愛心外框範圍 */
+
+.divBookBtZone>div {
+    position: relative;
+    top: -7px;
+    width: 70px;
+    height: 40px;
+    /* border-top: 2px black; */
+    /* background-color: blue; */
+}
+
+/* 產品購物車範圍*/
+
+.divBookBtZone>div+div {
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    /* border: 1px black; */
+    /* background-color: red; */
+}
+
+/* 願望清單愛心 */
+
+.divBookBtZone>div img {
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1520px){
+    .section3 li{
+        padding: 5px 15px;
+        margin-left: 12px;
+    }  
+}
+
+@media only screen and (max-width: 1440px){
+    .section3 li{
+        padding: 5px 15px;
+        margin-left: 2px;
+    }  
+}
+
+
+@media only screen and (max-width: 1024px){
+    .section3 li{
+        padding: 5px 21px;
+        margin-left: 2px;
+    }  
+}

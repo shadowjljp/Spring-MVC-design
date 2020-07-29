@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="../component/images/ReadShare_back.jpg">
+    <title>享讀後台系統</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/back.css">
+
+    <script language="JavaScript">
+        function ShowMenu(obj, noid) {
+            var block = document.getElementById(noid);
+            var n = noid.substr(noid.length - 1);
+            if (noid.length == 4) {
+                var ul = document.getElementById(noid.substring(0, 3)).getElementsByTagName("ul");
+                var h2 = document.getElementById(noid.substring(0, 3)).getElementsByTagName("h2");
+                for (var i = 0; i < h2.length; i++) {
+                    h2[i].innerHTML = h2[i].innerHTML.replace("-", "+");
+                    h2[i].style.color = "";
+                }
+                obj.style.color = "#FF0000";
+                for (var i = 0; i < ul.length; i++) { if (i != n) { ul[i].className = "no"; } }
+            } else {
+                var span = document.getElementById("menu").getElementsByTagName("span");
+                var h1 = document.getElementById("menu").getElementsByTagName("h1");
+                for (var i = 0; i < h1.length; i++) {
+                    h1[i].innerHTML = h1[i].innerHTML.replace("-", "+");
+                    h1[i].style.color = "";
+                }
+                obj.style.color = "#0000FF";
+                for (var i = 0; i < span.length; i++) { if (i != n) { span[i].className = "no"; } }
+            }
+
+            if (block.className == "no") {
+                block.className = "";
+                obj.innerHTML = obj.innerHTML.replace("+", "-");
+            } else {
+                block.className = "no";
+                obj.style.color = "";
+            }
+        }
+        function Loadfunction(aID) {
+            var iFUN = document.getElementById(aID.id);
+            var iPRG = document.getElementById("iframe");
+            if (iFUN.id == "add") {
+                iPRG.src = "https://tw.yahoo.com/";
+            } else if (iFUN.id == "DropProduct") {
+                iPRG.src = "search_del.jsp";
+            } else if (iFUN.id == "ResetPassword") {
+                iPRG.src = "ResetPassword.html";
+            } else if (iFUN.id == "SearchInformation") {
+                iPRG.src = "SearchInformation.html";
+            } else if (iFUN.id == "SearchOrder") {
+                iPRG.src = "searchOrder.jsp";
+            } else if (iFUN.id == "SAMPLE01") {
+                iPRG.src = "SAMPLE01.html";
+            } else if (iFUN.id == "SAMPLE01") {
+                iPRG.src = "SAMPLE02.html";
+            } else {
+                iPRG.src = "backPage.html";
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul class="headerul">
+                    <div class="logo">
+                        <a href="../index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <div class="logoSp">享讀 後臺管理系統</div>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <section class="section1">
+                <aside class="left">
+                    <div class="left-div">
+                        <div id="menu">
+                            <h1 onClick="javascript:ShowMenu(this,'NO0')"> - 後臺管理選單</h1>
+                            <span id="NO0">
+                                <h2 onClick="javascript:ShowMenu(this,'NO00')"> + 產品管理</h2>
+                                <ul id="NO00">
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="add">產品上架</a>
+                                    </li>
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="DropProduct">產品下架</a>
+                                    </li>
+                                </ul>
+                                <h2 onClick="javascript:ShowMenu(this,'NO01')"> + 會員管理</h2>
+                                <ul id="NO01">
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="ResetPassword">密碼重設</a>
+                                    </li>
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="SearchInformation">個資查詢</a>
+                                    </li>
+                                </ul>
+                                <h2 onClick="javascript:ShowMenu(this,'NO02')"> + 訂單管理</h2>
+                                <ul id="NO02">
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="SearchOrder">訂單查詢</a>
+                                    </li>
+                                </ul>
+                                <h2 onClick="javascript:ShowMenu(this,'NO03')"> + 添加範例</h2>
+                                <ul id="NO03">
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="SAMPLE01">1.先修改Html</a>
+                                    </li>
+                                    <li class="message">
+                                        <a href="#" onClick="Loadfunction(this);" id="SAMPLE02">2.在script新增else if</a>
+                                    </li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="section2">
+                <div>
+                    <!--修改下方index.html位置，即為iframe裡的頁面-->
+                    <a href="../developingHoward/IndexContent.html"></a>
+                    <a href="../developingHoward/message_collection.html"></a>
+                    <a href="../developingHoward/ClickTest.html"></a>
+                    <a href="../developingHoward/adEditor.html"></a>
+                    <iframe src="../developingHoward/adEditor.html" id="iframe" align="middle" scrolling="auto"></iframe>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+</body>
+
+
+<script>
+
+</script>
+
+</html>

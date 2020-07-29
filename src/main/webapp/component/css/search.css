@@ -1,0 +1,37 @@
+.booktitle {
+    padding-top: 7%;
+    color: #8B6257;
+}
+
+section{
+    margin-top: 50px;
+}
+
+tr:hover {
+    background-color: burlywood;
+    color: blue
+}
+
+td:hover {
+    text-decoration: underline;
+    color: blue
+}
+
+table {
+    border: 1;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.eventtitle {
+    width: 900px;
+}
+
+table td,
+th {
+    height: 50px;
+    width: 200px;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .divBall {
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.1;
+        }
+
+        iframe{
+            width: 100vw;
+            height: 100vh;
+        }
+        
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.addEventListener("click", function () {
+                // alert(event.x + "," + event.y) 
+                saveXY(event.x, event.y)
+            });
+
+            document.getElementById("bt1").addEventListener("click", function () {
+                document.getElementById("idSp").innerHTML = xyAr;
+            });
+
+            document.getElementById("bt2").addEventListener("click", appendXY);
+
+            document.addEventListener("scroll", function (event) {
+                scrollH = document.documentElement.scrollTop;//chrome
+                // console.log(scrollH);
+            });
+
+
+        });
+        var scrollH = 0;
+        var xyAr = new Array();
+        function saveXY(x, y) {
+            y += scrollH;
+            xyAr.push(x + " " + y);
+        }
+        function wripeXY() {
+            document.getElementById("iddiv").innerHTML = "";
+        }
+
+        function appendXY() {
+            // alert("xyAr.length=" + xyAr.length);
+            wripeXY();
+            for (var i = 1; i <= xyAr.length; i++) {
+                let x = 0;
+                let y = 0;
+                tempAr = (xyAr[i - 1] + "").split(" ", 2);
+                x = tempAr[0];
+                y = tempAr[1];
+                var tempDiv = document.createElement("div");
+                document.getElementById("iddiv").appendChild(tempDiv);
+
+                tempDiv.style.top = y + "px";
+                tempDiv.style.left = x + "px";
+                tempDiv.setAttribute("class", "divBall");
+                // tempDiv.style.width = 10 * 9 / xyAr.length + "px";
+                // tempDiv.style.height = 10 * 9 / xyAr.length + "px";
+                // tempDiv.style.opacity = 0.1;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="iddiv"></div>
+    <button id="bt1">showTxt</button>
+    <button id="bt2">showXY</button>
+    <hr>
+    <span id="idSp"></span>
+
+    <iframe src="IndexContent.html" frameborder="0"></iframe>
+
+    <!-- <div class="divBall"></div> -->
+</body>
+
+</html>

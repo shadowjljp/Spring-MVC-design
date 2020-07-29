@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滾動測試</title>
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div id="terms" style="height:1500px">
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+    </div>
+    <script>
+        // $(function () {
+        //     // 先取得 #terms 及其各種高度
+        //     // 判斷是否停用 $submit
+        //     var $terms = $('#terms'),
+        //         _height = $terms.height(),
+        //         _scrollHeight = $terms.prop('scrollHeight'),
+        //         _maxScrollHeight = _scrollHeight - _height - 20;
+        //     _least = 0, // 距離底部多少就可以, 0 表示得完全到底部
+        //         $submit = $('#submit').attr('disabled', _maxScrollHeight > _least);
+
+        //     // 當 #terms 中捲軸捲動時
+        //     $('#terms').scroll(function () {
+        //         var $this = $(this);
+        //         // 如果高度已經達到指定的高度就啟用 $submit
+        //         if (_maxScrollHeight - $this.scrollTop() <= _least) {
+        //             alert("test");
+        //         }
+        //     });
+        // });
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // if ($(document).scrollTop() <= 0) {
+                //     alert("滚动条已经到达顶部为0");
+                // }
+                if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                    // alert("滚动条已经到达底部为" + $(document).scrollTop());
+                    alert("到底了");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .divBall {
+
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.1;
+            /* top : 10px;
+            left:20px; */
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {///////////////////////////////////////////////////////
+            var beginDate, endDate;
+            var xyAr = new Array();
+
+            $('#bt1').on('click', function () {
+                beginDate = $('#beginDate').val();
+                endDate = $('#endDate').val();
+                // console.log(beginDate + " " + endDate);
+                if (beginDate == "" || endDate == "") {
+                    $('#idSp').text("　請選擇日期區間!");
+                } else {
+                    $('#idSp').text("");
+                    $.get('xxx.controller', { "beginTime": beginDate, "endDate": endDate }, function (dataBeans) {
+                        dataBeans.forEach(bean => {
+                            xyAr.push(bean.x + " " + bean.y);
+                        });
+                        $('#idSp').text("查詢完成!");
+                    }, "json");
+                }
+            });
+
+
+            $localContents = $(document);
+            $('#f1').on('load', function () {////////////////////////////////////iframe 內
+                var $iframe = $(this), $contents = $iframe.contents();
+                $contents.find('a').removeAttr('href');
+                $contents.find('form').removeAttr('action');
+                $contents.find('.wrapper').append("<div id='idDivInIframe'></div>");
+                $('#bt2').on('click', function () {
+                    for (var i = 1; i <= xyAr.length; i++) {
+                        let x = 0;
+                        let y = 0;
+                        tempAr = (xyAr[i - 1] + "").split(" ", 2);
+                        x = tempAr[0];
+                        y = tempAr[1];
+                        var tempDiv = document.createElement("div");
+                        document.getElementById("iddiv").appendChild(tempDiv);
+
+                        tempDiv.style.top = y + "px";
+                        tempDiv.style.left = x + "px";
+                        tempDiv.setAttribute("class", "divBall");
+                        // tempDiv.style.width = 10 * 9 / xyAr.length + "px";
+                        // tempDiv.style.height = 10 * 9 / xyAr.length + "px";
+                        // tempDiv.style.opacity = 0.1;
+                    }
+                });
+
+            });//////////////////////////////////iframe內
+        });////////////////////////////////////doc ready
+
+    </script>
+
+</head>
+
+<body>
+    <!-- <button id="bt1">showTxt</button> -->
+
+    <span>開始日期</span>
+    <input type="date" name="beginDate" id="beginDate">
+    <span>結束日期</span>
+    <input type="date" name="endDate" id="endDate">
+
+    <button id="bt1">開始</button>
+    <button id="bt2">繪圖</button>
+
+    <span id="idSp"></span>
+    <hr>
+    <div id="iddiv">
+        <iframe id="f1" src="IndexContent.html" frameborder="0"></iframe>
+    </div>
+
+
+    <!-- <div class="divBall"></div> -->
+</body>
+
+</html>

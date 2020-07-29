@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="Shortcut icon" href="http://www.jq22.com/favicon.ico">
+    <link href="css/demo.css?v3" rel="stylesheet" media="all">
+    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="chrome-extension://jhffgcfmcckgmioipfnmbannkpncfipo/util.js"></script>
+    <script src="chrome-extension://jhffgcfmcckgmioipfnmbannkpncfipo/pagejs.js"></script>
+    
+</head>
+
+<body>
+
+    <table class="table table-bordered table-hover table-condensed">
+        <thead><tr><th title="Field #1">本期營所稅暫估:</th>
+        <th title="Field #2">FIELD2</th>
+        <th title="Field #3">FIELD3</th>
+        </tr></thead>
+        <tbody><tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td>變動收入總額:</td>
+        <td>12345</td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td>變動成本及費用:</td>
+        <td>1234</td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td>變動淨利:</td>
+        <td>123</td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td> </td>
+        <td>___________</td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td>暫估應納稅額:</td>
+        <td>12345</td>
+        </tr>
+        </tbody></table>
+
+    <script>
+        window.onload = function () {
+            new rolldate.Date({
+                el: '#date2',
+                format: 'YYYY-MM-DD',
+                beginYear: 2000,
+                endYear: 2100,
+                theme: 'blue'
+            })
+        }
+        
+    </script>
+</body>
+
+</html>

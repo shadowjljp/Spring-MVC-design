@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bookSearchPage"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/bookSearch.jsp"></property>
+	</bean>
+
+	<bean id="index"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/index.jsp"></property>
+	</bean>
+
+	<!-- 測試程式 -->
+	<bean id="adEditor"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/developingHoward/adEditor.html"></property>
+	</bean>
+
+	<bean id="index1"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/index.jsp"></property>
+	</bean>
+
+	<bean id="member.page"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/bookCase.jsp"></property>
+	</bean>
+
+	<bean id="back.page"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/back/back.jsp"></property>
+	</bean>
+
+	<bean id="index.page"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/index.jsp"></property>
+	</bean>
+
+	<bean id="bkcase"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/pages/bookCase.jsp"></property>
+	</bean>
+
+	<bean id="ProjectSearchResult"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/ProjectSearchResult.jsp"></property>
+	</bean>
+
+	<bean id="backprodedit"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/back/back.jsp"></property>
+	</bean>
+
+	<bean id="finishOrder"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/finishOrder.jsp"></property>
+	</bean>
+
+	<bean id="backprojedit"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/back/backFundEdit.jsp"></property>
+	</bean>
+
+	<bean id="view"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/pages/viewer.jsp"></property>
+	</bean>
+
+	<bean id="view1"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/viewer.jsp"></property>
+	</bean>
+	<bean id="bookcontroller"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/booktest.jsp"></property>
+	</bean>
+
+	<bean id="buycontroller"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/shoppingCart.jsp"></property>
+	</bean>
+	
+	<bean id="orderJumpToIndex"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/orderJumpToIndex.jsp"></property>
+	</bean>
+	
+	<bean id="Checkout"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/Checkout.jsp"></property>
+	</bean>
+
+
+	<bean id="selectprojhomecontroller"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/pages/Project.jsp"></property>
+	</bean>
+
+	<bean id="projstatuschangesuccess"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/back/backPage.jsp"></property>
+	</bean>
+
+	<bean id="projectpaycontroller"
+		class="org.springframework.web.servlet.view.RedirectView">
+		<property name="contextRelative" value="true"></property>
+		<property name="url" value="/pages/ProjectPay.jsp"></property>
+	</bean>
+	
+	<bean id="backprodtoedit"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/back/backProdEdit.jsp"></property>
+	</bean>
+
+</beans>

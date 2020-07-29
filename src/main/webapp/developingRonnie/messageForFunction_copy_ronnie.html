@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../component/css/message.css">
+
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+    <script src="../component/js/bootstrap.min.js"></script>
+    <script src="../component/js/jquery-ui-effects.min.js"></script>
+    <script src="../component/js/jquery-ui-Interactions.min.js"></script>
+
+
+    <style>
+    
+    .class{
+
+        position: fixed;
+        top:30px;
+        left: 30px;
+    }
+    
+    </style>
+
+    
+</head>
+
+<body>
+
+
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1 class="class">１</h1>
+    <h1>２</h1>
+    <h1>３</h1>
+    <h1>　</h1>
+    <h1>４</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <h1>　</h1>
+    <!-- 整個即時通元件都包覆在這裡 -->
+    <div id="idMsgCompWrapper" class="msgCompWrapper">
+
+        <!-- class="divMsgTitleBar2" -->
+        <div id="idDivMsgTitleBar" class="divMsgCicle">
+            <span>享</span>
+        </div>
+
+        <div id="idDivMsgBoxContent" class="divMsgBoxContent">
+            <div class="divMsgBoxContentSender">
+                <p>123</p>
+            </div>
+
+            <div class="divMsgBoxContentSender">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentReceiver">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentSender">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentReceiver">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+        </div>
+
+
+        <div id="idDivMsgInputRange" class="divMsgInputRange">
+
+            <div id="idDivMsgInputBox" class="divMsgInputBox" contenteditable="true"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
+<script>
+
+    $(function () {
+        $('#idDivMsgInputBox').keydown(
+            function (e) {
+                // alert(e.which);
+                if (e.which == 13) {
+                    // alert('enter事件 後續觸發文字送出')
+                    alert($(this).text());
+                    $(this).text("");
+                }
+            }
+        );
+
+        $(document).on('mousemove',followLight);
+
+        $('#idDivMsgTitleBar').mouseover(function () {
+            $(document).off('mousemove');
+            var currObj1 = $(this);
+            if (currObj1.hasClass('divMsgCicle')) {
+                currObj1.text('享讀-即時客服')
+                        .css({ "cursor": "pointer" ,"box-shadow": "" })
+                        .switchClass('divMsgCicle', 'divMsgTitleBar2', 300)
+            }
+
+        });
+        // .mouseout(function () {$(this).switchClass('divMsgTitleBar2','divMsgCicle',400)});
+
+
+        $('#idDivMsgTitleBar').click(
+            function () {
+                var currObj2 = $(this);
+                // alert(123);
+                $('#idDivMsgBoxContent').toggle();
+                $('#idDivMsgInputRange').toggle();
+
+                if (currObj2.hasClass('divMsgTitleBar')) {
+                    // title bar下沉
+                    currObj2.switchClass('divMsgTitleBar', 'divMsgTitleBar2', 400);
+
+                    currObj2.html('<span>享</span>');
+                    // 縮回球形
+                    currObj2.switchClass('divMsgTitleBar2', 'divMsgCicle', 400)
+
+                    //綁定陰影事件
+                    $(document).on('mousemove',followLight);
+
+                } else {
+                    // 長高
+                    currObj2.switchClass('divMsgTitleBar2', 'divMsgTitleBar', 0);
+                }
+            }
+        );
+
+        // handle屬性用來解決 div contenteditable="true" 被覆蓋的問題
+        $('#idMsgCompWrapper').draggable({ handle: '#idDivMsgBoxContent' });
+    });
+
+    //物件陰影隨座標移動function
+    function followLight(e) {
+
+            var targetElement = $('.divMsgCicle');
+
+            //fixed了 不需要管scroll座標
+            // var sx = e.pageX + document.documentElement.scrollTop;
+            // var sy = e.pageY + document.documentElement.scrollLeft;
+            var sx = e.pageX;
+            var sy = e.pageY;
+            // console.log("-----------------------------------------");
+            // console.log("sx,sy = " + sx + "," + sy);
+            var targY = targetElement.offset().top + 25;
+            var targX = targetElement.offset().left + 25;
+            // console.log("targX,targY = " + targX + "," + targY);
+
+            var dX = sx - targX;
+            var dY = sy - targY;
+            // console.log("dX,dY = " + dX + "," + dY);
+
+            var tempAng = Math.atan2(dY, dX) * 180 / Math.PI;
+            // console.log("tempAng = " + tempAng);
+
+            var resultX = - 7 * Math.cos(tempAng * Math.PI / 180);
+            var resultY = - 7 * Math.sin(tempAng * Math.PI / 180);
+
+            var tempAttr = resultX + "px " + resultY + "px " + "7px " +  "1px rgba(20%, 20%, 40%, 0.5)";
+
+            targetElement.css({ "box-shadow": tempAttr });
+        }
+</script>
+
+</html>

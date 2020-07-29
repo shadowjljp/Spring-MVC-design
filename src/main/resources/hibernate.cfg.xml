@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+ 
+<!-- LocalHost版 -->
+<!--         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=ReadShareDB</property> -->
+<!--         <property name="hibernate.connection.username">sa</property> -->
+<!--         <property name="hibernate.connection.password">passw0rd</property> -->
+ 
+<!-- Paco版 -->
+<!-- 		<property name="hibernate.connection.url">jdbc:sqlserver://192.168.30.63:1433;database=ReadShareDB</property> -->
+<!-- 		<property name="hibernate.connection.username">sa</property> -->
+<!-- 		<property name="hibernate.connection.password">passw0rd</property> -->
+ 
+<!-- 雲端Azure版 -->
+        <property name="hibernate.connection.url">jdbc:sqlserver://readshare.database.windows.net:1433;database=ReadShareDB</property>
+        <property name="hibernate.connection.username">readshare</property>
+        <property name="hibernate.connection.password">eeit@102</property>
+ 
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+ 
+        <property name="show_sql">true</property>
+ 
+        <!-- 寫到執行續再打開 -->
+        <property name="hibernate.current_session_context_class">thread</property>
+ 
+        <!-- Howard 部分 -->
+        <mapping class="model.AdanalysisBean" />
+        <mapping class="model.MessageBean" />
+        <mapping class="model.AdvertisementBean" />
+        <!-- Howard 部分 -->
+ 
+        <!-- Jimmy 部分 -->
+        <mapping class="model.AdminBean" />
+        <mapping class="model.AdminServiceBean" />
+        <mapping class="model.BookCaseBean" />
+        <mapping class="model.CustomerServiceBean" />
+        <mapping class="model.MemberBean" />
+        <mapping class="model.HopeListBean" />
+        <mapping class="model.FriendListBean" />
+        <mapping class="model.BookCaseBean" />
+        <!-- Jimmy 部分 -->
+ 
+        <!-- Danny 部分 -->
+        <mapping class="model.ProjectBean" />
+        <mapping class="model.MemberProjectBean" />
+        <!-- Danny 部分 -->
+ 
+        <!-- jerry 部分 -->
+        <mapping class="model.LogisticsBean" />
+        <mapping class="model.OrdersProductBean" />
+        <mapping class="model.SpiderBean" />
+        <mapping class="model.OrdersBean" />
+        <!-- jerry 部分 -->
+ 
+        <!-- Ronnie 部分 -->
+        <mapping class="model.FnAlertBean" />
+        <!-- Ronnie 部分 -->
+ 
+        <!-- Paco 部分 -Ronnie分工 -->
+        <mapping class="model.AuthorBean" />
+        <mapping class="model.ClassBean" />
+        <mapping class="model.BookCaseBean" />
+        <!-- <mapping class="model.BookStarBean" /> -->
+        <!-- Paco 部分 -->
+ 
+        <!-- Paco 部分 Howard 起頭 -->
+        <mapping class="model.ProductBean" />
+        <mapping class="model.AuthorProductBean" />
+ 
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,50 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../component/css/bootstrap.min.css">
+<link rel="stylesheet" href="../component/css/jumbotron.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+ 
+<style>
+.sendToAnalyze{
+    float:right;
+    margin-right: 100px;
+    padding:10px;
+}
+
+td{
+    width:300px;
+}
+label,input {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 225px;
+}
+</style>
+    <title>爬蟲的條件設定</title>
+</head>
+<body>
+    <!--在本頁放搜尋條件-->
+    <form action="">
+    <div class="card-body">
+      
+        <legend>爬蟲的條件設定</legend>
+        <table id="table1"
+            class="table table-bordered table-striped table-hover">
+        <tr><td><label>Product id:</label><input type="text" name="" /></td></tr>
+        <tr><td><label>Product name:</label><input type="text" name="" /></td></tr>
+        <tr><td><label>ISBN:</label><input type="text" name="" /></td></tr>
+        <tr><td><label>Class Name:</label><input type="text" name="" /></td></tr>
+        </table>
+       
+    </div>
+    <div><input class="sendToAnalyze" type="button"   value="開始分析" /></div>
+</form>
+ 
+</body>
+</html>

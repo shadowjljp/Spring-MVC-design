@@ -1,0 +1,31 @@
+.mouseOverSectionCover{
+    background-Color:green;
+    opacity:0.5;
+    border-top: solid 5px green;
+    border-bottom: solid 5px green;
+    /* transition: 0.2s; */
+
+}
+.mouseOverSectionLiCover{
+    transform: rotate(8deg);
+    z-index: 10;
+    float: left;
+    transition: 0.5s;
+}
+.mouseOverSectionLiCover img{
+    /* transform: scale(0.9); */
+    /* background-color: green; */
+
+    /* filter: blur(5px); */
+    /* filter:opacity(50%); */
+    filter:saturate(0%);
+    filter:drop-shadow(10px 10px 10px black);
+    /* transition: 0.5s; */
+
+}
+
+.mouseOverSection2DivCover{
+    filter: blur(5px);
+    transition: 0.5s;
+    
+}

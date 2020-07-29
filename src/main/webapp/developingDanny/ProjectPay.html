@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Header Footer CSS-->
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <!--END-->
+    <!--jquery載入-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <title>付款頁面</title>
+    <style>
+        body {
+            background-color: rgb(255, 249, 239);
+        }
+
+        .titlebody {
+            margin-left: 0;
+            text-align: center;
+            font-size: 45px;
+        }
+
+        .total-div {
+            width: 1400px;
+            height: 800px;
+            margin-left: -1.7em;
+            margin-top: 10%;
+        }
+
+        .input-type {
+            width: 200px;
+            height: 25px;
+            margin-left: 0.5em;
+        }
+
+        .payTitle-div {
+            margin-left: 15em;
+
+        }
+
+        .payTitle {
+            font-size: 20px;
+            font-family: 微軟正黑體;
+            font-weight: bold;
+        }
+
+        .pay-insert-div {
+            font-size: 20px;
+            margin-left: 10em;
+            border-radius: 10px;
+            border: 1px solid rgb(29, 28, 28);
+            width: 500px;
+            height: 85px;
+        }
+
+        .left-div {
+            float: left;
+            margin-top: 1em;
+        }
+
+        .txt {
+            font-size: 80%;
+            margin-left: 0.5em;
+            margin-bottom: 1em;
+            width: 450px;
+            color: gray;
+        }
+
+        .block1div {
+            margin-left: 2em;
+            margin-top: 0.2em;
+        }
+
+        .paymoney-text {
+            width: 200px;
+            height: 25px;
+            margin-left: 0.5em;
+        }
+
+        .pay-info-div {
+            margin-top: 1em;
+            font-size: 20px;
+            margin-left: 10em;
+            width: 500px;
+            border: 1px solid rgb(29, 28, 28);
+            border-radius: 10px;
+        }
+
+        .Feedback-title {
+            margin-top: 1em;
+        }
+
+        .feedback-p {
+            font-size: 20px;
+            font-family: 微軟正黑體;
+            font-weight: bold;
+        }
+
+        .projectFeedback-div {
+            width: 500px;
+            height: 610px;
+            float: left;
+            margin-left: 3em;
+        }
+
+        .projectFeedback {
+            border: 1px solid rgb(46, 45, 45);
+            border-radius: 10px;
+            width: 400px;
+            height: 150px;
+        }
+        .projectFeedback:hover{
+            border: 1.5px solid rgb(46, 45, 45);
+        }
+
+        .projectFeedback-title {
+            border: 1px solid rgb(46, 45, 45);
+            border-radius: 10px;
+            width: 400px;
+            height: 35px;
+            background-color: rgb(226, 216, 216);
+        }
+
+        .projectFeedback-span1 {
+            font-size: 25px;
+            margin-left: 0.3em;
+            font-weight: bold;
+        }
+
+        .projectFeedback-span2 {
+            float: right;
+            margin-right: 0.2em;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .enter-button {
+            width: 450px;
+            height: 50px;
+            background-color: rgb(248, 237, 223);
+            border-radius: 10px;
+
+            margin: 0.5em 0% 30% 32%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋募資專案名稱">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <!--<input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>-->
+                                <!-- <span>作者</span> -->
+                                <!--<input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <span>ISBN</span> -->
+                                <!-- <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>-->
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/maxresdefault.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+        <div class="container">
+            <div class="total-div">
+                <h1 class="titlebody">小小廚神養成計畫報名開始囉！</h1>
+                <div class="left-div">
+
+                    <div class="payTitle-div">
+                        <p class="payTitle">請輸入您的贊助人資訊並付款,可參考右方回饋資訊</p>
+                    </div>
+                    <div class="pay-insert-div">
+                        <div class="block1div">
+                            <label for="">輸入贊助金額:</label>
+                            <br> $
+                            <input class="paymoney-text" type="text " placeholder="請在右方點選要贊助的金額" name="
+                    " id="payMoney">
+                            <br>
+                            <span class="txt">提醒您!金額達到回饋方案要求會有限量禮物唷!</span>
+                        </div>
+                    </div>
+                    <div class="pay-info-div">
+                        <div style="margin-left: 2em;margin-top: 0.2em;">
+                            <label for="">贊助人姓名:</label>
+                            <br>
+                            <input class="input-type" type="text " placeholder="請輸入贊助人姓名" name="
+                    " id=" ">
+                            <br>
+                            <span class="txt">ex:王曉明</span>
+                            <br>
+                            <label for="">贊助人電話:</label>
+                            <br>
+                            <input style=" width: 200px;height:25px;margin-left: 0.5em; " type="text " placeholder="請輸入贊助人電話" name="
+                    " id=" ">
+                            <br>
+                            <span class="txt">ex:0933-000-098</span>
+                            <br>
+                            <label for="">贊助人地址:</label>
+                            <br>
+                            <input style=" width: 200px;height:25px;margin-left: 0.5em; " type="text " placeholder="請輸入贊助人地址" name="
+                    " id=" ">
+                            <br>
+                            <span class="txt">ex:新北市蘆洲區xxxxxxxxxxxx</span>
+                            <br>
+                            <label for="">贊助人mail:</label>
+                            <br>
+                            <input style=" width: 200px;height:25px;margin-left: 0.5em; " type="text " placeholder="請輸入贊助人e-mail" name="
+                    " id=" ">
+                            <br>
+                            <span class="txt">ex:1234567ddddd@hahaha.com.tw</span>
+                        </div>
+                    </div>
+                    <input class="enter-button" type="button" name="" id="" value="付款確認">
+                </div>
+                <div class="projectFeedback-div">
+                    <div class="Feedback-title">
+                        <p class="feedback-p">回饋方案</p>
+                    </div>
+                    
+                    <div id="feedBackDiv1" class="projectFeedback">        
+                        <div class="projectFeedback-title">
+                            <span id="feedBackMoney1" class="projectFeedback-span1">300</span>
+                            <span class="projectFeedback-span2">限量10/100</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出100份小禮物唷!!</p>   
+                    </div>         
+                    <div id="feedBackDiv2" class="projectFeedback">
+                        <div class="projectFeedback-title">
+                            <span id="feedBackMoney2" class="projectFeedback-span1">500</span>
+                            <span class="projectFeedback-span2">限量10/100</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出100份小禮物唷!!</p>
+                    </div>
+                    <div id="feedBackDiv3" class="projectFeedback">
+                        <div class="projectFeedback-title">
+                            <span id="feedBackMoney3" class="projectFeedback-span1">800</span>
+                            <span class="projectFeedback-span2">限量03/80</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出80份小禮物唷!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </footer>
+    	<script>
+            $("#feedBackDiv1").click(function () {
+                var text = $("#feedBackMoney1").text();
+                $("#payMoney").val(text);
+            });
+            $("#feedBackDiv2").click(function () {
+                var text = $("#feedBackMoney2").text();
+                $("#payMoney").val(text);
+            });
+            $("#feedBackDiv3").click(function () {
+                var text = $("#feedBackMoney3").text();
+                $("#payMoney").val(text);
+            });
+        </script>
+    </div>
+
+
+
+</body>
+
+</html>

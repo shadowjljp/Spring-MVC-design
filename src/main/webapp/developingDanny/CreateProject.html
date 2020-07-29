@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增提案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>享讀 - 我參加的活動</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../images/ReadShare.ico">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="../component/js/classie.js"></script>
+    <script src="../component/js/dialogFx.js"></script>
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <script>
+        (function () {
+            var dlgtrigger = document.querySelector('[data-dialog]'),
+                somedialog = document.getElementById(dlgtrigger.getAttribute('data-dialog')),
+                dlg = new DialogFx(somedialog);
+            dlgtrigger.addEventListener('click', dlg.toggle.bind(dlg));
+        })();
+    </script>
+
+
+    <style>
+        .title-h1 {
+            font-size: 50px;
+        }
+
+        hr {
+            width: 400px;
+            margin: auto;
+            margin-bottom: 1em;
+        }
+
+        .text {
+            width: 200px;
+        }
+
+        .body {
+            text-align: center;
+            border: 1.5px solid rgb(30, 31, 31);
+            width: 700px;
+            margin: auto;
+        }
+
+       .body-form {
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+
+        .txt {
+            font-size: 80%;
+            margin-left: 0.5em;
+            margin-bottom: 1em;
+            width: 450px;
+            color: gray;
+
+        }
+
+        .dialog,
+        .dialog__overlay {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .dialog {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .dialog__overlay {
+            position: absolute;
+            z-index: 1;
+            background: rgba(55, 58, 71, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .dialog--open .dialog__overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .dialog__content {
+            width: 50%;
+            max-width: 560px;
+            min-width: 290px;
+            background: #fff;
+            padding: 4em;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            opacity: 0;
+        }
+
+        .dialog--open .dialog__content {
+            pointer-events: auto;
+        }
+
+        /* Content */
+
+        .dialog h2 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 2em;
+            padding: 0 0 2em;
+            margin: 0;
+        }
+    </style>
+    <script src="js/classie.js"></script>
+    <script src="js/dialogFx.js"></script>
+    <script>
+        (function () {
+            var dlgtrigger = document.querySelector('[data-dialog]'),
+                somedialog = document.getElementById(dlgtrigger.getAttribute('data-dialog')),
+                dlg = new DialogFx(somedialog);
+            dlgtrigger.addEventListener('click', dlg.toggle.bind(dlg));
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋募資專案名稱">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <!--<input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                        <label for="bookName">書名</label>-->
+                                <!-- <span>作者</span> -->
+                                <!--<input type="radio" name="tag" id="authorName" value="authorName">
+                                        <label for="authorName">作者</label>
+                                        <span>ISBN</span> -->
+                                <!-- <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                        <label for="bookISBN">ISBN</label>-->
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/maxresdefault.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+        <div class="container">
+            <form class="body-form" action="">
+                <div class="body">
+
+
+                    <h1 class="title-h1">開始提案</h1>
+                    <hr>
+                    <label for="">輸入專案名稱:</label>
+                    <input type="text" name="" placeholder="專案名稱" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:《夢迴樂園 Wanderland》八仙塵燃傷者復健之路 紀錄片院線上映計畫</span>
+                    <hr>
+                    <label for="">專案圖片:</label>
+                    <input type="file" name="" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">請將專案圖片上架</span>
+                    <hr>
+                    <label>專案發布時間:</label>
+                    <input type="date" name="" placeholder="發布的日期" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <span class="txt"></span>
+                    <br>
+                    <span class="txt">ex:2016/01/01</span>
+                    <hr>
+                    <label>專案開始時間:</label>
+                    <input type="date" name="" placeholder="開始募資日期" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <span class="txt"></span>
+                    <br>
+                    <span class="txt">ex:2016/01/01</span>
+                    <hr>
+                    <label>專案結束時間:</label>
+                    <input type="date" name="" placeholder="募資結束日期" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <span class="txt"></span>
+                    <br>
+                    <span class="txt">ex:2016/01/01</span>
+                    <hr>
+                    <label for="">專案目標預算:</label>
+                    <input type="text" name="" placeholder="請輸入目標預算" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:$500000</span>
+                    <hr>
+                    <label for="">募資方案1:</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案1內容說明" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:限量50個小熊送給大家!</span>
+                    <hr>
+                    <label for="">募資方案1(價錢):</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案1達標價錢" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:$100</span>
+                    <hr>
+                    <label for="">募資方案2:</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案2內容說明" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:限量50個小熊送給大家!</span>
+                    <hr>
+                    <label for="">募資方案2(價錢):</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案2達標價錢" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:$300</span>
+                    <hr>
+                    <label>募資內容：</label>
+                    <label for="">募資方案3:</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案3內容說明" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:限量50個小熊送給大家!</span>
+                    <hr>
+                    <label for="">募資方案3(價錢):</label>
+                    <input type="text" name="" placeholder="請輸入回饋方案達標價錢" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:$800</span>
+                    <hr>
+                    <label for="">專案影片(YouTube連結)</label>:</label>
+                    <input type="text" name="" placeholder="請輸入影片youtube連結" autocomplete="off" size="20" required>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">請按影片右下角分享>>>嵌入>>>複製>>>iframe xxxxxx /iframe </iframe>
+                    </span>
+                    <hr>
+                    <textarea style="margin-left: 1em;" cols="40" rows="20" name="bookintro"></textarea>
+                    <span class="require">*必填</span>
+                    <br>
+                    <span class="txt">ex:2015年6月27日晚上8點32分，一場在八仙樂園舉辦的彩色派對，因粉塵暴燃霎時間成為一片火海。這場震撼台灣的公安意外，當時台灣社會高度關注，陽光也旋即成立四個重建中心及一個住宿家園，並邀請曾以《粉墨登場》紀錄片入圍金馬獎的導演吳星螢用影像記錄下這群傷者的身心復健歷程。</span>
+                    <hr>
+
+
+                    <input type="submit" name="" id="" value="送出">
+
+                    <div id="somedialog" class="dialog">
+                        <div class="dialog__overlay"></div>
+                        <div class="dialog__content">
+                            <h2>
+                                <strong>Howdy</strong>, I'm a dialog box</h2>
+                            <div>
+                                <button class="action" data-dialog-close>Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-wrap">
+                        <button data-dialog="somedialog" class="trigger">Open Dialog</button>
+                    </div>
+
+
+                </div>
+                </form>
+        </div>
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+
+
+    </form>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xxx專案</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="../component/css/style.css"> -->
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <!-- <link rel="stylesheet" href="../component/css/main.css"> -->
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>
+    <style>
+        body{
+            background-color: rgb(255, 249, 239);
+        }
+        .container{
+            margin-top: 6em;
+        }
+        .titlebody {
+            text-align: center;
+        }
+
+        .top-div {
+            
+            width: 920px;
+            height: 600px;
+           
+            margin: 0px auto;
+        }
+
+        .goalfinish {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 0.3em;
+        }
+
+        .goalday {
+            font-size: 18px;
+            margin-left: 340px;
+        }
+
+        .iframe-div {
+            float: left;
+            width: 565px;
+            height: 320px;
+            border: 2px solid black;
+        }
+
+        .bar-font-div {
+            margin-top: 20px
+        }
+
+        .bar-font-left {
+            font-size: 18px;
+        }
+
+        .bar-font-right {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 300px;
+        }
+
+        .detailitem {
+            font-size: 35px;
+            font: bold;
+        }
+
+        .detailitemsmall {
+            padding-top: -20em;
+        }
+
+        .request-div {
+            padding-top: -50em;
+        }
+        /*-------付款按鈕----------*/
+        .button-div {
+            width: 940px;
+            height: 80px;
+        }
+
+        .CreateButton {
+            float: right;
+            margin-left: 10px;
+            text-align: center;
+            color: #cccccc;
+            height: 3em;
+            width: 8em;
+            color: #8B6257;
+            border: solid 0.5px;
+            border-radius: 10px;
+
+        }
+        .CreateButton:hover{
+            border: 1.5px solid #8B6257;
+        }        
+        /*------------------------*/
+        .iframe-right-div {
+            float: left;
+            width: 325px;
+            margin-left: 1.5em;
+           
+        }
+
+        .progress-bar {
+            position:absolute;
+            top: 9%;
+           left: 0.1%;
+            height: 23px;
+            width: 550px;
+            background-color: rgb(248, 133, 181);
+        }
+
+        .progress {
+            border: 1px solid rgb(201, 198, 198);
+            width: 550px;
+            height: 30px;
+        }
+
+        .goaldiv {
+            margin-top: -1em;
+            margin-left: 0.3em;
+        }
+
+        .goalfinish {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 0.3em;
+        }
+
+        .button-div {
+            width: 1150px;
+            margin: 0px auto;
+        }
+
+        .tabs {
+            width: 920px;
+            height: 3000px;
+            float: left;
+
+        }
+
+        .projectFeedback-div {
+            width: 210px;
+            height: 2000px;
+            float: right;
+        }
+         .projectFeedback {
+            border: 1px solid rgb(201, 198, 198);
+            width: 210px;
+            height: 200px;
+        }
+
+        .projectFeedback-title {
+            border: 1px solid rgb(221, 217, 217);
+            width: 209px;
+            height: 35px;
+            background-color: rgb(248, 237, 222);
+        }
+
+        .projectFeedback-span1 {
+            font-size: 20px;
+            margin-left: 0.3em;
+            font-weight: bold;
+        }
+
+        .projectFeedback-span2 {
+            float: right;
+            margin-right: 0.2em;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋募資專案名稱">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <!--<input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>-->
+                                <!-- <span>作者</span> -->
+                                <!--<input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <span>ISBN</span> -->
+                               <!-- <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>-->
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+
+                    <img src="../component/images/maxresdefault.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+        <div class="container">
+            <div class="top-div">
+                <h3 class="titlebody">小小廚神養成計畫報名開始囉！</h3>
+                <br>
+                <div class="titlediv">
+                    <div class="iframe-div">
+                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/1ZhuCiQ1nqY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                            <img style="width: 560px;height:315px;" src="../component/images/maxresdefault.jpg" alt="">
+                        <div class="bar-font-div">
+                            <span class="bar-font-left">目前$550,000</span>
+                            <span class="bar-font-right">目標$1,000,000</span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+                                </div>
+                            </div>
+                            <div class="goaldiv">
+    
+                                <span class="goalfinish">已完成55%</span>
+                                <span class="goalday">還剩下xx天</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="iframe-right-div">
+                        <div>
+                            <p class="detailitem">$551,110</p>
+                            <p class="detailitemsmall">目標$620,000</p>
+                        </div>
+                        <div>
+                            <p class="detailitem">2160</p>
+                            <p class="detailitemsmall">人贊助</p>
+                        </div>
+                        <div class="request-div">
+                            <p class="detailitem">25</p>
+                            <p class="detailitemsmall">天結束</p>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="">
+                            <input type="button" value="贊助專案" class="button">
+                            </div>
+                            <br>
+                            <div>
+                                <p>此專案將於2018年09月28日截止</p>
+                                <p>請有意贊助的朋友多多支持</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="button-div">
+                <div class="tabs" id="tabs">
+                    <div class="choose-iframe">
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="#tabs-1">專案內容</a>
+                                </li>
+                                <li>
+                                    <a href="#tabs-2">專案進度</a>
+                                </li>
+                                <li>
+                                    <a href="#tabs-3">專案支持者</a>
+                                </li>
+                            </ul>
+    
+                            <div id="tabs-1" class="tabs-div">
+    
+                                <img src="../component/images/600_phppvvmN9.jpg" alt="">
+                                <p>
+                                    為什麼職場上的世代衝突越來越嚴重？因為⋯⋯
+                                    <br> 97% 的台灣公司是中小企業，無法提供完善新人培訓
+                                    <br> 沒時間、沒資源帶人，新人陣亡率極高！
+    
+                                    <br> 大學研究所苦讀學到的東西，在職場上常常無處發揮
+    
+                                    <br> 因此，泛科學院想要用這套課程幫助年輕人減少學用落差，更好的適應職場
+    
+                                    <br> 也幫助台灣中小企業解決職場世代衝突
+    
+                                    <br>
+                                </p>
+                                <p>
+                                    LESSON 換位思考征服履歷 長度 100 分鐘
+                                    <br> 主題 1：用自己風格的履歷，讓人眼睛一亮
+                                    <br> 主題 2：履歷就是行銷文案，經歷、能力與事蹟怎麼「表現」才吸引人
+                                    <br> 主題 3：踩雷履歷撰寫範例，10種大家以為很猛，但根本沒人在意的內容
+                                    <br> 主題 4：搞懂人資部門的難處，讓你快速通關
+                                    <br>
+                                </p>
+                                <p>
+                                    LESSON 全方位面試技巧 長度 110 分鐘
+                                    <br> 主題 1：面試是一趟旅行，行前問自己，你從哪裡出發？你想要去哪裡？
+                                    <br> 主題 2：面試前 履歷已讀不回怎麼辦、在你不知道的時候，面試已經開始了
+                                    <br> 主題 3：面試中 HR 面試技巧剖析、依據面試者的身分來回答、經典問題如何答才得體（你想要多少薪水？你有什麼想問的嗎？）
+                                    <br> 主題 4：面試後 你要主動詢問嗎、等多久才正常
+                                    <br>
+                                </p>
+                                <p>
+                                    LESSON 時間管理：實力X效率，發揮最大功效 長度 100 分鐘
+                                    <br> 主題 1：時間真的就是金錢嗎，朋友？你的時間用到哪裡去了？
+                                    <br> 主題 2：重要的事情先做，但誰決定哪件事情重要？
+                                    <br> 主題 3：運用時間管理術，完成龐大複雜任務
+                                    <br> 主題 4：善加管理工作之餘，大谷翔平都在用的人生規劃術
+                                    <br>
+                                </p>
+                                <p>
+                                    常見問題
+                                    <br> Q：可以只上其中一堂課程嗎？
+                                    <br> A：全部課程將於募資結束後，將會至泛科學院上架，您可以先填寫這份表單留下 email，獲得上架通知。（價格將調回原價 990 元喔）
+                                    <br> Q：贊助方案之後，什麼時候開始上課？在哪裡上課呢？
+    
+                                    <br> A：募資達標後，全套課程將於泛科學院網站陸續上線，最快將可於九月中開始第一堂課，我們將會用Email通知您。您可以使用你的 FlyingV 帳號登入，即可在「我的課程」中看見你報名的課程囉。（請在泛科學院登入頁面點選
+                                    FlyingV 帳號登入按鈕）
+                                    <br> Q：我贊助了全套課程，什麼時候會得知抽獎結果呢？
+    
+                                    <br> A：我們將在 9/5 公布獲得 MacBook Air 的幸運得主，並以 Email 和簡訊通知中獎者，請務必確認您的聯絡資訊正確唷。（依法規規定，獎品金額超過 20,000
+                                    元，需扣繳 10% 稅金）
+                                    <br> Q：課程可以退費嗎？
+    
+                                    <br> A：課程募資期間，您可以向 FlyingV 平台提出退費申請。課程上線後，七日之內（含購買當日）認為不符合需求，且未觀看課程者（除試看單元外），可向泛科學院提出退費申請。
+                                    <br> Q：如何申請保證加薪，無效退費呢？
+    
+                                    <br> A：凡贊助全套課程（早鳥或方案D）並上完所有課程的學員，於一年後薪資漲幅未達 10% 以上，請來信 taipei@panschool.asia ，並檢附您的 FlyingV 帳號、國民身分證影本、存摺封面與薪資證明，審核通過後我們會將您的贊助款項全額匯至您的指定帳戶，申請退費截止日為
+                                    2020 年 6 月 30 日。（薪資證明需檢附民國 107 年所得稅扣繳憑單及民國 108 年所得稅扣繳憑單，申請時必須為正常受薪狀態，創業、待業、留職停薪者，請於再次就職時提出申請。）
+                                    <br> Q：中低收入補助方案要怎麼申請呢？
+    
+                                    <br> A：請先贊助您想要申請的課程方案，並於備註欄填寫「中低收入方案」，我們將由專人聯繫確認資格後，將款項匯至您提供的帳戶。
+                                    <br> Q：我還有其他問題想詢問，要怎麼聯絡你們？
+    
+                                    <br> A：您可以點右下角線上客服圖示，跟我們對話，或是在互動欄留言。若有課程內容相關問題請寄信至 taipei@panschool.asia，或來電 02-23620699 分機 327（週一至週五
+                                    9:30 - 18:30）；若有募資平台相關問題，可以參考平台 FAQ 或來信 flyingfive@ontoo.cc。
+                                    <br>
+                                </p>
+                            </div>
+                            <div id="tabs-2" class="tabs-div">
+                                <p>
+                                    專案進度未更新。
+                                </p>
+                            </div>
+                            <div id="tabs-3" class="tabs-div">
+                                <p>
+    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projectFeedback-div">
+                    <div class="projectFeedback">
+                        <div class="projectFeedback-title">
+                            <span class="projectFeedback-span1">$300</span>
+                            <span class="projectFeedback-span2">限量10/100</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出100份小禮物唷!!</p>
+                    </div>
+                    <div class="projectFeedback">
+                        <div class="projectFeedback-title">
+                            <span class="projectFeedback-span1">$300</span>
+                            <span class="projectFeedback-span2">限量10/100</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出100份小禮物唷!!</p>
+                    </div>
+                    <div class="projectFeedback">
+                        <div class="projectFeedback-title">
+                            <span class="projectFeedback-span1">$500</span>
+                            <span class="projectFeedback-span2">限量03/80</span>
+                        </div>
+                        <p>為了感謝您的贊助,我們將限量送出80份小禮物唷!!</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+    
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+    
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+    
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+    
+                    </table>
+                </div>
+    
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

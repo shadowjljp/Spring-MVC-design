@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/message.css">
+    <title>Document</title>
+
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-ui-effects.min.js"></script>
+    <script src="/js/jquery-ui-Interactions.min.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            for (var i = 1; i <= 30; i++) {
+
+                var newh2 = document.createElement("h2");
+                document.getElementById("idDiv").appendChild(newh2);
+                newh2.innerHTML = "　";
+            }
+
+            // document.getElementById("idDiv2").addEventListener("mouseover", spin180);
+
+        });
+
+        // function spin180() {
+        //     // this
+        //     document.getElementById("idDiv2").style.transform = ": rotate(90deg)";
+        // }
+
+
+        $(function () {
+            $("#idDiv2").draggable()
+                .click(chgClassOpen);
+
+            $(document).click(chgClassCls);
+        });
+
+        function chgClassCls() {
+            if (!$('#idDiv2').hasClass('divCicle')) {
+
+                $('#idDiv2').switchClass('msgBox', 'divCicle', 500);
+                $('#idDivBox').text('');
+                $('#idMsgInpTxt').switchClass('msgInpTxtDs', 'msgInpTxt', 400);
+                $('#idInnerDivBox').toggleClass('innerDivBox');
+
+            }
+        }
+
+        function chgClassOpen() {
+            // var tempInBox = $('<input>');
+            // tempInBox.attr('type','text');
+
+            var currentObj = $(this);
+
+            if (currentObj.hasClass('divCicle')) {
+                currentObj.switchClass('divCicle', 'msgBox', 500);
+                $('#idDivBox').text('send');
+                $('#idMsgInpTxt').switchClass('msgInpTxt', 'msgInpTxtDs', 400)
+
+                $('#idInnerDivBox').toggleClass('innerDivBox');
+
+            }
+
+            // else {
+            //     currentObj.switchClass('msgBox', 'divCicle', 500);
+            //     $('#idDivBox').text('');
+            //     $('#idMsgInpTxt').switchClass('msgInpTxtDs', 'msgInpTxt', 400);
+            // }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- 這個div idDiv只用來產生超過一頁的空白資料 -->
+    <div id="idDiv"> </div>
+
+    <!-- <div class="msgBox"> -->
+    <!-- <textarea class="msgBox" name="" id="" cols="30" rows="10"></textarea> -->
+
+    <!-- </div> -->
+
+    <!-- 第一組元件 -->
+    <div id="idDiv2" class="divCicle">
+
+        <div class="msgInpTxt" id="idMsgInpTxt">
+
+            <span>
+                <br data-text="true">
+            </span>
+        </div>
+
+        <div class="divOutBox">
+            <div id="idDivBox" class="divBox"></div>
+        </div>
+
+        <div id="idInnerDivBox"></div>
+
+        <!-- <input class="msgKeyIn" type="text"> -->
+    </div>
+
+    <!-- 第二組 拆分元件 -->
+    <!-- 球  -->
+    <div id="idDivMsgCicle" class="divMsgCicle"></div>
+
+    <!-- Msg Title-->
+    <!-- <div id="idDivMsgTitleBox" class="divMsgTitleBar"></div> -->
+
+
+    <!-- 展開後 -->
+    <div class="divMsgBoxOut"></div>
+
+    <script>
+        $('#idDivMsgCicle').mouseover(function () {$(this).switchClass('divMsgCicle', 'divMsgTitleBar', 500)})
+                           .mouseout(function () {$(this).switchClass('divMsgTitleBar', 'divMsgCicle', 500)})
+                           .click(
+                function () {
+                    // var msgTitleSp = $('span').text('客服即時通');
+                    $(this).unbind()
+                        //    .append(msgTitleSp)
+                        .draggable()
+                  
+                })
+
+    </script>
+
+    
+
+
+</body>
+
+</html>

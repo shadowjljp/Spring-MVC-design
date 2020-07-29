@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--<jsp:useBean id="idSearch" class="bookpage.bookDAO" scope="page" />
+<jsp:setProperty property="getbookid" name="idSearch" value="<%=bookid%>" />-->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Language" content="zh-tw">
+  <title>分析 - $@活動名
+  </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/x-icon" href="../../../component/images/ReadShare.ico">
+  <link rel="stylesheet" href="../../../../component/jquery-1.2.1-ui.css">
+  <link rel="stylesheet" href="../../../../component/css/style.css">
+  <script src="../../../../component/js/highcharts.js"></script>
+  <script src="../../../../component/js/exporting.js"></script>
+  <script src="../../../../component/export-data.js"></script>
+
+  <style>
+    .sc1 {
+      width: 1000px;
+      /* padding-top: 5%; */
+      margin: 20px auto auto auto;
+    }
+
+    .booktitle {
+      padding-top: 5%;
+      color: #8B6257;
+    }
+
+    input {
+      padding: 5px 15px;
+      background: #ccc;
+      border: 0 none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+
+      <section class="sc1">
+        <div>
+          <div class="booktitle">
+            <h4 name="bookNameOri">
+              編號：
+            </h4>
+            <h3 name="bookNameZh">
+              【2015】107-1 國際文化村 Intercultural Village (10月份)
+            </h3>
+
+          </div>
+          <hr>
+        </div>
+    </div>
+    </section>
+    <section style="float: left;margin:100px 10% 10% 10%;">
+      <div id="container" style="width: 450px; height: 400px;float:left"></div>
+      <div id="city" style="width:450px; height: 400px;float:right"></div>
+      <script>
+        Highcharts.chart('container', {
+          chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+          },
+          credits: {
+            enabled: false
+          },
+          exporting: {
+            enabled: false //用来设置是否显示‘打印’,'导出'等功能按钮，不设置时默认为显示
+          },
+          title: {
+            text: '年齡分佈',
+            align: "center",
+            verticalAlign: 'top',
+            y: 40
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+            pie: {
+              dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                  fontWeight: 'bold',
+                  color: 'white'
+                }
+              },
+              startAngle: -90,
+              endAngle: 90,
+              center: ['50%', '75%']
+            }
+          },
+          series: [{
+            type: 'pie',
+            name: '性別',
+            innerSize: '50%',
+            data: [
+              ['男性', 35.7],
+              ['女性', 64.3],
+              {
+                dataLabels: {
+                  enabled: true
+                }
+              }
+            ]
+          }]
+        });</script>
+
+      <script>
+        Highcharts.chart('city', {
+          chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+          },
+          credits: {
+            enabled: false
+          },
+          exporting: {
+            enabled: false //用来设置是否显示‘打印’,'导出'等功能按钮，不设置时默认为显示
+          },
+          title: {
+            text: '縣市分佈',
+            align: "center",
+            verticalAlign: 'top',
+            y: 40
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+            pie: {
+              dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                  fontWeight: 'bold',
+                  color: 'white'
+                }
+              },
+              startAngle: -90,
+              endAngle: 90,
+              center: ['50%', '75%']
+            }
+          },
+          series: [{
+            type: 'pie',
+            name: '縣市',
+            innerSize: '50%',
+            data: [
+              ['台北市', 80],
+              ['台南市', 3.7],
+              ['高雄市', 6.3],
+              ['嘉義市', 1.7],
+              ['台東縣', 0.2],
+              ['基隆市', 8.1],
+              {
+                dataLabels: {
+                  enabled: true
+                }
+              }
+            ]
+          }]
+        });</script>
+    </section>
+  </div>
+</body>
+
+</html>

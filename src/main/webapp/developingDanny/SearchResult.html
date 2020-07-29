@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>募資-搜尋結果</title>
+    <script src="../component/js/bootstrap.min.js"></script>
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--Header Footer-->
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <script>
+
+    </script>
+    <style>
+        /*--給container一個高度把footer往下推--*/
+
+        .container {
+            height: 1400px;
+        }
+
+        /*----------------*/
+
+        .proj-img {
+            width: 280px;
+            height: 190px;
+            border-radius: 13px;
+        }
+
+        .title-h1 {
+            font: bold;
+            font-size: 50px;
+            margin-left: 2em;
+        }
+
+        .projarea {
+            border-radius: 15px;
+            border: 1.3px solid rgb(28, 29, 29);
+            width: 280px;
+            height: 340px;
+            margin-left: 1em;
+            margin-top: 1em;
+            overflow: hidden;
+            float: left;
+        }
+
+        .proj-line {
+            width: 1200px;
+            height: 350px;
+            margin: auto;
+        }
+
+        .projtitle {
+            font-weight: bold;
+            font-size: 14px;
+            margin-left: 0.3em;
+            margin-right: 0.3em;
+            height: 2em;
+            overflow: hidden;
+        }
+
+        .projcontent {
+            margin-top: -12px;
+            line-height: 2em;
+            height: 55px;
+            font-size: 11px;
+            overflow: hidden;
+        }
+
+        .button {
+            width: 150px;
+            height: 40px;
+            margin-left: 1em;
+        }
+
+        .pagination>li>a,
+        .pagination>li>span {
+            border-radius: 50% !important;
+            margin-bottom: 0 5px;
+        }
+
+        .buttompage {
+            margin: auto;
+            width: 250px;
+            height: 38px;
+        }
+
+        .progress-bar {
+            height: 13px;
+            background-color: rgb(30, 30, 31);
+
+        }
+
+        .progress {
+            border: 1px solid rgb(156, 154, 154);
+            height: 14px;
+        }
+
+        .goaldiv {
+            margin-top: -1.1em;
+            margin-left: 0.3em;
+        }
+
+        .goalfinish {
+            font-weight: bold;
+            margin-left: 0.3em;
+        }
+
+        .goalday {
+            float: right;
+            margin-right: 0.3em;
+        }
+
+        /*---搜尋框ajax的css---*/
+
+        #Search-div {
+            margin-left: 0.7em;
+            width: 160px;
+            border-bottom: 1px solid gray;
+            border-left: 1px solid gray;
+            border-right: 1px solid gray;
+            background-color: white;
+            z-index: 1;
+            position: fixed;
+            overflow: hidden;
+        }
+
+        .Search-content {
+            margin-top: 7px;
+            margin-bottom: 2px;
+            color: black;
+            width: 160px;
+            height: 30px; 
+            font-size: 30px;
+        }
+
+        .Search-content:hover {
+            background-color: rgb(206, 151, 132);
+        }
+
+        /*--------------------*/
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <img src="../component/images/ReadShareLOGO.png" alt="">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input id="Search-bar" class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋募資專案名稱" autocomplete="off">
+
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <!--<input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                        <label for="bookName">書名</label>-->
+                                <!-- <span>作者</span> -->
+                                <!--<input type="radio" name="tag" id="authorName" value="authorName">
+                                        <label for="authorName">作者</label>
+                                        <span>ISBN</span> -->
+                                <!-- <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                        <label for="bookISBN">ISBN</label>-->
+
+                            </span>
+                            <div id="Search-div">
+                                <a href="">
+                                    <span id="Search-content"></span>
+                                </a>                            
+                            </div>
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="../component/images/searchBT.png" alt="">
+                            </button>
+                            
+                            <!--搜尋框 Ajax區-->
+                            <script>
+                                    $(document).ready(function () {
+                                        $("#Search-div").hide();
+                                        $("#Search-bar").focus(function () {
+                                            $("#Search-div").show();
+                                            /*----用keydown事件讀取值,填入Search-content----*/
+                                            $("#Search-bar").keydown(function () {
+                                                var text = $("#Search-bar").val();
+                                                $("#Search-content").text(text);
+                                            /*--------*/
+                                            });
+                                        });
+                                        $("#Search-bar").blur(function () {
+                                            $("#Search-div").hide();
+                                        });
+                                    });
+                                </script>
+                                <!---->
+                        </form>
+                    </div>
+
+                    <img src="../component/images/maxresdefault.jpg" alt="">
+
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="../component/images/cart_enpty.png" alt="">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/signin.jsp">登入</a> -->
+                        <a href="pages/signin.jsp">登出</a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/Member.jsp">註冊</a> -->
+                        <a href="pages/Member.jsp">個人書櫃</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                    <span class="spSolgan">
+                        <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                        嗨，Howard，歡迎光臨享讀！
+                    </span>
+
+                </ul>
+
+            </nav>
+            <div class="divHeaderSkew"></div>
+        </header>
+        
+        <div class="container">
+            <div class="total-div">
+                <h1 class="title-h1">搜尋結果:xxxxxx</h1>
+                <div class="proj-line">
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/maxresdefault.jpg" alt="">
+                        <p class="projtitle">UYAS Play 頑.音響｜音樂與風格由你混搭</p>
+                        <p class="projcontent">喜歡聽音樂的我們，總想像著有沒有更簡單、更直覺的聆聽方式。找不到歌？何不把常用的音樂服務整合在一起；配對繁瑣？</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+                            </div>
+
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$550,000</span>
+                                <span class="goalfinish">已完成55%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/dog.jpg" alt="">
+                        <p class="projtitle">如何幫助小狗適應新的環境?</p>
+                        <p class="projcontent">快拿出你的錢錢來幫助小狗找到新家,並且讓他們適應新的環境</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 69%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$690,000</span>
+                                <span class="goalfinish">已完成69%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/FPjunhD.jpg" alt="">
+                        <p class="projtitle">天線寶寶要跟你互相傷害耶!!!快點來參與</p>
+                        <p class="projcontent">覺得天線寶寶很白癡嗎?是不是想要揍他一頓了呢,付出你的錢我們幫你</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$550,000</span>
+                                <span class="goalfinish">已完成55%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/project.png" alt="">
+                        <p class="projtitle">發現群眾募資平台的100種可能</p>
+                        <p class="projcontent">台灣目前共有13大群眾募資平台，密度可是世界第一！近兩年來募資活動越來越盛行、成功案例也不少，提到募資，第一時間您腦海中浮現的可能是”flying V”與”嘖嘖”等知名募資平台，但其實分眾化的群眾募資平台也已經應運而生了喲！</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$200,000</span>
+                                <span class="goalfinish">已完成20%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-line">
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/givememoney.png" alt="">
+                        <p class="projtitle">"同情我,就給我錢"</p>
+
+                        <p class="projcontent">我想能讓周遭的每一個人都很自在的生活著 這才是真正的尊重 也是必須要學習的生活智慧吧^^
+                        </p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$200,000</span>
+                                <span class="goalfinish">已完成20%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$200,000</span>
+                                <span class="goalfinish">已完成20%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 46%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$460,000</span>
+                                <span class="goalfinish">已完成46%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$450,000</span>
+                                <span class="goalfinish">已完成45%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-line">
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/givememoney.png" alt="">
+                        <p class="projtitle">"同情我,就給我錢"</p>
+
+                        <p class="projcontent">我想能讓周遭的每一個人都很自在的生活著 這才是真正的尊重 也是必須要學習的生活智慧吧^^
+                        </p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 87%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$870,000</span>
+                                <span class="goalfinish">已完成87%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$800,000</span>
+                                <span class="goalfinish">已完成80%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$900,000</span>
+                                <span class="goalfinish">已完成90%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+                    <div class="projarea">
+                        <img class="proj-img" src="../component/images/cute.jpg" alt="">
+                        <p class="projtitle">《臉輸人生 My Fakebook Life》短片集資計畫</p>
+                        <p class="projcontent">如果有一天、你得了難以啟齒的病症；你還會愛用臉書嗎?</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+                            </div>
+                        </div>
+                        <div class="goaldiv">
+                            <spanp>$150,000</span>
+                                <span class="goalfinish">已完成15%</span>
+                                <span class="goalday">還剩下xx天</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="divFooterSkew"></div>
+            <div>
+
+                <div class="footerDiv1">
+                    <h6>關於我們</h6>
+                    <ul>
+                        <li>資策會Java就業養成班</li>
+                        <li>期別：EEIT102</li>
+                        <li>指導老師：馬全德</li>
+                    </ul>
+                </div>
+
+                <div class="footerDiv2">
+                    <h6>社群連結</h6>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footerDiv3">
+                    <h6>小組名單</h6>
+                    <table>
+                        <tr>
+                            <td>吳浩澐（Howard）　</td>
+                            <td>劉安育（Jerry）</td>
+                        </tr>
+                        <tr>
+                            <td>鄭宇軒（Danny）</td>
+                            <td>林晉宇（Jimmy）</td>
+                        </tr>
+                        <tr>
+                            <td>歐松運（Paco）</td>
+                            <td>林偃秋（Ronnie）</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

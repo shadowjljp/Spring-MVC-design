@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--<jsp:useBean id="idSearch" class="bookpage.bookDAO" scope="page" />
+<jsp:setProperty property="getbookid" name="idSearch" value="<%=bookid%>" />-->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>享讀 - 參加的活動</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../images/ReadShare.ico">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pagingType": "full_numbers",
+                "language": {
+                    "lengthMenu": "每頁顯示 _MENU_ 筆資料",
+                    "zeroRecords": "沒有找到資料",
+                    "info": "第 _PAGE_ 頁 ( 共 _PAGES_ 頁 )",
+                    "infoEmpty": "無紀錄",
+                    "infoFiltered": "(從 _MAX_ 條紀錄過濾)",
+                    "search": "搜尋：",
+                    "loadingRecords": "查詢中...",
+                    "paginate": {
+                        "first": "首頁",
+                        "last": "末頁",
+                        "next": "下頁",
+                        "previous": "上頁"
+                    },
+                },
+                "paging": true, //換頁
+                "ordering": true,//排序
+                "info": true, //第O頁，共O頁
+                "search": true, //搜尋框
+                "order": [[3, "asc"]], //第一列從0開始，這裡表格初始化時，第四列默認降序
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    //改行满足的条件
+                    if (aData[3] == "已截止") {
+                        //设置满足条件行的背景、字体颜色
+                        $('td:eq(3)', nRow).css("background", "lightgrey");
+                        $('td:eq(3)', nRow).css("color", "white");
+                    } else if (aData[3] == "報名中") {
+                        $('td:eq(3)', nRow).css("background", "green");
+                        $('td:eq(3)', nRow).css("color", "white");
+                    } else if (aData[3] == "已額滿") {
+                        $('td:eq(3)', nRow).css("background", "lightgrey");
+                        $('td:eq(3)', nRow).css("color", "white");
+                    }
+                },
+            });
+        });
+    </script>
+    <style>
+        .booktitle {
+            padding-top: 5%;
+            color: #8B6257;
+        }
+
+        input {
+            color: white;
+            ;
+            background: #8B6257;
+            border: 0 none;
+            cursor: pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            font-size: 120%;
+        }
+
+        table>tbody>tr>td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <section style="float: left;margin:20px 10% 10% 10%;">
+        <h3 class="booktitle">您輸入的關鍵字為：</h3>
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>活動名稱</th>
+                    <th>開始時間</th>
+                    <th>結束時間</th>
+                    <th>報名狀態</th>
+                    <th>編輯</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alternative pagination</a>
+                    </td>
+                    <td>2013-03-06</td>
+                    <td>2014-06-06</td>
+                    <td>報名中</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已截止</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+                <tr>
+                    <td>假到不能再假的假資料</a>
+                    </td>
+                    <td>2015-11-06</td>
+                    <td>2016-12-06</td>
+                    <td>已額滿</td>
+                    <td>
+                        <input type="submit" value="查看">
+                        <input type="submit" value="編輯">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>活動名稱</th>
+                    <th>開始時間</th>
+                    <th>結束時間</th>
+                    <th>報名狀態</th>
+                    <th>編輯</th>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    </div>
+</body>
+
+</html>

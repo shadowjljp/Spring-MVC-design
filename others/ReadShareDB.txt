@@ -1,0 +1,679 @@
+ --ALTER DATABASE Test1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+--ALTER DATABASE Test1 COLLATE Chinese_Taiwan_Stroke_CI_AS
+--ALTER DATABASE Test1 SET MULTI_USER WITH ROLLBACK IMMEDIATE
+--USE Test1;
+--GO
+--drop database ReadShareDB
+--go
+
+--CREATE DATABASE ReadShareDB;
+--go
+--USE ReadShareDB;
+GO
+CREATE TABLE author (
+id integer identity primary key,
+authornamezh Nvarchar(max),
+authornameen Nvarchar(max),
+authorniname Nvarchar(max),
+authorintro Nvarchar(max),
+translintro Nvarchar(max)
+);
+go
+/*INSERT INTO [dbo].[Author]
+([authornamezh]
+,[authornameen]
+,[authorniname]
+,[authorintro]
+,[translintro])
+VALUES ('蔡筱英','TSY','小英','作者簡介','譯者簡');*/
+
+CREATE TABLE class (
+id integer identity primary key,
+supid integer references class(id),
+name Nvarchar(max)
+);
+go
+/*
+INSERT INTO [dbo].[Class] ([name])
+VALUES ('中文書'),('英文書');
+
+INSERT INTO [dbo].[Class] ([supid],[name])
+VALUES (1,'生活風格'),(1,'社會科學'),(1,'工具書'),(1,'雜誌')
+
+,(3,'星座命理'),(3,'美容美體'),(3,'飲食生活')
+,(4,'法律'),(4,'政治'),(4,'哲學')
+,(5,'語言學習'),(5,'百科')
+,(6,'日文雜誌'),(6,'中文雜誌')
+
+,(7,'塔羅牌'),(7,'紫薇斗數')
+,(8,'美甲'),(8,'身體雕塑')
+,(9,'食譜'),(9,'居家')
+,(10,'刑法'),(10,'憲法')
+,(11,'西方政治'),(11,'中國政治')
+,(12,'西方哲學'),(12,'東方哲學')
+,(13,'台語'),(13,'印尼語')
+,(14,'兒童百科'),(14,'古典百科')
+,(15,'寫真集'),(15,'日語學習')
+,(16,'周刊'),(16,'月刊');
+*/
+--------------------------------------------------------------------6
+CREATE TABLE product (
+id integer identity primary key,
+bknamezh Nvarchar(max),
+bknameen varchar(max),
+authorid integer references author(id),
+transid integer references author(id),
+bklang Nvarchar(max),
+bkpublisher Nvarchar(max),
+bkpubdate date,
+flag integer,
+prodstock integer,
+prodcost float,
+prodprice integer,
+proddisc float,
+bkisbn varchar(max),
+bkseries Nvarchar(max),
+bkpage integer,
+bkver Nvarchar(max),
+bksize varchar(max),
+bkwgt integer,
+prodimg varbinary(max),
+bkskin Nvarchar(max),
+bkmenu Nvarchar(max),
+bkintro Nvarchar(max),
+bkefile Nvarchar(max),
+authorintro Nvarchar(max),
+translintro Nvarchar(max),
+classid integer references class(id),
+bkstar float
+);
+go
+/*INSERT into product ([id],[bknamezh]
+,[bknameen]
+,[authorid]
+,[transid]
+,[bklang]
+,[bkpublisher]
+,[bkpubdate]
+,[flag]
+,[prodstock]
+,[prodcost]
+,[prodprice]
+,[proddisc]
+,[bkisbn]
+,[bkseries]
+,[bkpage]
+,[bkver]
+,[bksize]
+,[bkwgt]
+,[prodimg]
+,[bkskin]
+,[bkmenu]
+,[bkintro]
+,[authorintro]
+,[translintro]
+,[classid])
+VALUES (5,'中文書名','Book English Name',1,2,'中文','傑瑞出版社','2018-08-20',1,500,300,296.5,0.87,'9789654123521','成神系列',9487,'二版一刷','30x50cm',300,null,'今夏最熱!!','第一張…第二章…','書籍簡介','作者簡介','譯者簡介',1);
+*/
+--------------------------------------------------------------------2
+CREATE TABLE authorproduct (
+prodid integer references product(id),
+authorid integer references author(id),
+authortype integer
+);
+go
+/*INSERT into authorproduct ([prodid]
+,[authorid]
+,[authortype]) VALUES (1,1,1);*/
+--------------------------------------------------------------------3
+CREATE TABLE member (
+id integer identity primary key,
+memac varchar(max),
+mempw varchar(max),
+memname Nvarchar(max),
+memniname Nvarchar(max),
+memgen Nvarchar(max),
+membirth Date,
+memphone varchar(max),
+memadd Nvarchar(max),
+mememail1 Nvarchar(max),
+mememail2 Nvarchar(max),
+memcd date,
+memllt date,
+memfid integer,
+sis integer,
+memhl varchar(max),
+memlv nvarchar(max),
+memst integer,
+mememoney integer,
+memimg varbinary(max),
+);
+go
+
+/*
+insert into member (memac, mempw, memname, memniname, memgen, membirth, memphone, memadd, mememail1, mememail2, memcd, memllt, memfid, sis, memhl, memlv, memst, mememoney, memimg)
+values('jimmy', 'jimmy123', 'jimmy Lin', 'jim', 'male', '1990-10-30', '0912345678', 'taipei', 'jimmy@gamil.com', 'jim@gamil.com', '2018-07-07', '2018-08-08', 12, 1, 'hopehope', 'lv100', 123, 222, (SELECT * from Openrowset( Bulk 'D:\FinalProject\emily.jpg', Single_Blob) as memphoto));
+go
+*/
+
+--------------------------------------------------------------------15
+CREATE TABLE orders (
+id integer  primary key,
+memid integer references member(id),
+orderdate date,
+orderstate Nvarchar(max),
+orderamount integer,
+paymenttype Nvarchar(max),
+shippingstate Nvarchar(max),
+orderticket Nvarchar(max),
+invoicenum integer,
+invoicename Nvarchar(max),
+businesstax integer,
+orderreturn Nvarchar(max),
+receivername Nvarchar(max),
+receiverphone varchar(max),
+receiveradd Nvarchar(max),
+buyername Nvarchar(max),
+buyerphone Nvarchar(max)
+);
+go
+
+/*
+USE [ReadShareTestDB]
+GO
+
+INSERT INTO [dbo].[orders]
+           ([memid]
+           ,[orderdate]
+           ,[orderstate]
+           ,[orderamount]
+           ,[paymenttype]
+           ,[shippingstate]
+           ,[orderticket]
+           ,[invoicenum]
+           ,[invoicename]
+           ,[businesstax]
+           ,[orderreturn]
+           ,[receivername]
+           ,[receiverphone]
+           ,[receiveradd]
+           ,[buyername]
+           ,[buyerphone]
+           )
+           
+     VALUES
+           (1
+           ,'2018-01-01'
+           ,'已出貨'
+           ,2000
+           ,'信用卡'
+           ,'已送達'
+           ,'AB11223344'
+           ,12345678
+           ,'改桌面團隊'
+           ,100
+           ,null
+           ,'Howard'
+           ,0912345678
+           ,'AA@BBCCDD'
+           ,'Jimmy'
+           ,0987564124
+           ,'jimmy@gmail.com')
+GO
+*/
+--------------------------------------------------------------------7
+CREATE TABLE ordersproduct (
+id integer identity primary key,
+prodid integer references product(id),
+orderid integer references orders(id),
+amount Integer
+);
+go
+--------------------------------------------------------------------5
+
+CREATE TABLE spider (
+id Nvarchar(50) primary key,
+prodid integer references product(id),
+price integer
+);
+go
+
+/*insert into spider values ('柏克萊','1','100')
+insert into spider values ('讀莫','2','200')
+insert into spider values ('金剛堂','3','300')
+*/
+--------------------------------------------------------------------10 Howard 9/3有更新
+CREATE TABLE advertisement (
+id integer identity primary key,
+adcompany Nvarchar(max),
+adtaxid integer,
+adadd Nvarchar(max),
+adsales Nvarchar(max),
+adtel Nvarchar(max),
+adimg varbinary(max),
+adduration bigint,
+adurl Nvarchar(max),
+clicknum integer,
+adrevenue integer,
+businesstax integer,
+startdate date,
+enddate date,
+adcat Nvarchar(max),
+zone integer,
+adorder integer
+);
+go
+
+/*
+INSERT INTO [dbo].[advertisement]
+([adcompany]
+           ,[adtaxid]
+           ,[adadd]
+           ,[adsales]
+           ,[adtel]
+           ,[adimg]
+           ,[adduration]
+           ,[adurl]
+           ,[clicknum]
+           ,[adrevenue]
+           ,[businesstax]
+           ,[startdate]
+           ,[enddate]
+           ,[adcat]
+           ,[zone])
+VALUES
+('Yahoo奇摩'
+,123456789
+,'桃園市123號'
+,'陳業務'
+,'0912345678'
+,(SELECT * from Openrowset( Bulk 'C:\JavaFramework\eclipse-workspace\FinalProject\src\main\webapp\component\images\BannerZone1\1.jpg', Single_Blob) as AdPhoto)
+,19284722 
+,'http://yahoo.com.tw'
+,4456
+,20000
+,500
+,'2018-07-09'
+,'2018-08-09'
+,'書籍'
+,1)
+GO
+
+*/
+
+--------------------------------------------------------------------11
+
+CREATE TABLE bookexchange (
+bkchangeid integer identity primary key,
+mem1id integer references member(id),
+mem2id integer references member(id),
+orderid integer references orders(id),
+bk1isbn varchar(max),
+bk2isbn varchar(max),
+changebk1name Nvarchar(max),
+changebk2name Nvarchar(max),
+author1 Nvarchar(max),
+author2 Nvarchar(max),
+bk1intro Nvarchar(max),
+bk2intro Nvarchar(max),
+bk1pic1 varbinary(max),
+bk1pic2 varbinary(max),
+bk1pic3 varbinary(max),
+bk2pic1 varbinary(max),
+bk2pic2 varbinary(max),
+);
+go
+--------------------------------------------------------------------13
+  CREATE TABLE project (
+id integer identity primary key,
+memid integer,
+projt date,
+projstartt date,
+projendt date,
+projcontent Nvarchar(max),
+projname Nvarchar(max),
+projbdg Integer,
+projplan1 Nvarchar(max),
+projplan1price integer,
+projplan1num integer,
+projplan2 Nvarchar(max),
+projplan2price integer,
+projplan2num integer,
+projplan3 Nvarchar(max),
+projplan3price integer,
+projplan3num integer,
+projytube Nvarchar(max),
+projstatus Nvarchar(max),
+projimg varbinary(max)
+);
+go
+/*
+INSERT INTO [dbo].[project]
+([memid]
+,[projt]
+,[projstartt]
+,[projendt]
+,[projcontent]
+,[projname]
+,[projbdg]
+,[projplan1]
+,[projplan1price]
+,[projplan1num]
+,[projplan2]
+,[projplan2price]
+,[projplan2num]
+,[projplan3]
+,[projplan3price]
+,[projplan3num]
+,[projytube]
+,[projstatus]
+,[projimg])
+VALUES
+(1
+,'2018-08-23'
+,'2018-08-23'
+,'2018-08-23'
+,'這個是我測試的專案內容唷'
+,'測試的專案標題'
+,500000
+,'回饋方案1'
+,300
+,100
+,'回饋方案2'
+,500
+,80
+,'回饋方案3'
+,700
+,50
+,''
+,'審核中'
+,(SELECT * from Openrowset( Bulk 'D:\上課內容\EEIT 期末專題\Table設計\0823測試\images\cute.jpg', Single_Blob) as memphoto))
+*/
+
+--------------------------------------------------------------------14
+CREATE TABLE customerservice (
+id integer identity primary key,
+memid integer references member(id),
+flag integer,
+ssort Nvarchar(max),
+sbl Nvarchar(max),
+srec Nvarchar(max),
+st date
+);
+go
+
+/*
+insert into customerservice (memid, flag, ssort, sbl, srec, st)
+values (1, 1, 'english', 'bitch', 'fuck you', '2017-08-20');
+go
+*/
+
+--------------------------------------------------------------------16
+CREATE TABLE memberproject (
+id integer identity primary key,
+memid integer references member(id),
+projid integer references project(id),
+sponsormoney Integer,
+receivername Nvarchar(max),
+receiveradd Nvarchar(max),
+receivermail Nvarchar(max),
+receiverphone varchar(max),
+sponsordate date
+);
+go
+--------------------------------------------------------------------18
+CREATE TABLE bookcase (
+id integer identity primary key,
+ownerid integer references member(id),
+bkid integer references product(id),
+sharedmemid integer references member(id),
+sharetime date
+);
+go
+
+/*
+insert into bookcase (ownerid, bkid, sharedmemid, sharetime)
+values(1, 1, 2, '2018-07-07');
+go
+*/
+--------------------------------------------------------------------19
+CREATE TABLE admin (
+id integer identity primary key,
+admacc varchar(max),
+admpw varchar(max),
+admname Nvarchar(max),
+admniname Nvarchar(max),
+admgen Nvarchar(max),
+admtel varchar(max),
+admadd Nvarchar(max),
+admemail1 Nvarchar(max),
+admemail2 Nvarchar(max),
+admcd date,
+admllt date
+);
+go
+
+/*
+INSERT INTO [dbo].[admin]
+([admacc]
+,[admpw]
+,[admname]
+,[admniname]
+,[admgen]
+,[admtel]
+,[admadd]
+,[admemail1]
+,[admemail2]
+,[admcd]
+,[admllt])
+VALUES
+('jimmy'
+,'jimmy123'
+,'jimmylin'
+,'jim'
+,'male'
+,'0912345678'
+,'taipei'
+,'jimmy@gmail.com'
+,'jim@gmail.com'
+,'2018-01-01'
+,'2018-03-03')
+GO
+*/
+
+--------------------------------------------------------------------20
+
+CREATE TABLE adminservice (
+id integer identity primary key,
+adminid integer references admin(id),
+serviceid integer references customerservice (id),
+);
+go
+
+/*
+insert into adminservice (adminid, serviceid)
+values (1,1)
+go
+*/
+
+--------------------------------------------------------------------22
+CREATE TABLE message (
+id integer identity primary key,
+admid integer references admin(id),
+mbid integer references member(id),
+sender nvarchar(max),
+receiver nvarchar(max),
+msg nvarchar(max),
+sendtime datetime,
+readstate nvarchar(max)
+);
+go
+
+/*
+INSERT INTO [dbo].[message]
+           ([admid]
+           ,[mbid]
+,[receiver]
+           ,[sender]
+           ,[msg]
+           ,[sendtime]
+           ,[readstate])
+     VALUES
+           (1
+           ,1
+,'admin1'
+           ,'customer1'
+           ,'我是一堆文字文字文字'
+           ,'2018/09/01'
+           ,'未讀')
+GO
+
+*/
+--------------------------------------------------------------------21
+CREATE TABLE activity (
+id integer identity primary key,
+activesub nvarchar(max),
+activecontent nvarchar(max),
+activestartt date,
+activeendt date,
+activeloc nvarchar(max),
+activelimit integer,
+activestatus integer
+);
+go
+/*
+INSERT into activity ([activesub]
+,[activecontent]
+,[activestartt]
+,[activeendt]
+,[activeloc]
+,[activelimit]
+,[activestatus]) VALUES ('活動名稱','活動內文','2018-08-25','2018-08-25','300教室',25,2);
+*/
+CREATE TABLE memberactivity (
+id integer identity primary key,
+activeid integer references activity(id),
+memid integer references member(id),
+memname Nvarchar(max),
+memphone varchar(max),
+fundt date
+);
+go
+/*
+INSERT into memberactivity (
+[activeid]
+,[memid]
+,[memname]
+,[memphone]
+,[fundt]) VALUES (1,1,'會員名','2315-8865','2018-05-24');
+*/
+
+CREATE TABLE logistics (
+id integer identity primary key,
+orderid integer references orders(id),
+compname Nvarchar(max),
+transport Nvarchar(max),
+spd integer,
+price float,
+dest Nvarchar(max),
+score float
+);
+go
+--------------------------------------------------------------------Howard
+CREATE TABLE adanalysis (
+id int identity  primary key,
+page Nvarchar(max),
+adclickx float,
+adclicky float,
+clicktime datetime
+);
+go
+
+/*
+INSERT INTO [dbo].[adanalysis]
+([page]
+,[adclickx]
+,[adclicky]
+,[clicktime])
+VALUES
+('this will be a url'
+,100.1
+,200.2
+,2018-08-22)
+GO
+*/
+--------------------------------------------------------------------Howard
+CREATE TABLE bookstar (
+prodid integer references product(id),
+memid integer references member(id),
+score integer
+);
+go
+
+/*
+INSERT INTO [dbo].[bookstar]
+([prodid]
+,[memid]
+,[score])
+VALUES
+(1,1,5)
+GO
+*/
+
+
+
+--------------------------------------------------------------------Ronnie
+CREATE TABLE fnalert (
+id integer  identity primary key,
+time date,
+item Nvarchar(max),
+updatetime date,
+note Nvarchar(max)
+);
+go
+
+
+/*
+INSERT INTO [dbo].[fnalert]
+           ([time]
+           ,[item]
+           ,[updatetime]
+           ,[note])
+     VALUES
+           ('2018-01-01',
+           '測試事項',
+           '2018-01-01',
+           '其他備註' )
+GO
+*/
+
+--------------------------------------------------------------------
+
+CREATE TABLE hopelist(
+id integer identity primary key,
+ownerid integer references member(id),
+bkid integer references product(id),
+jointime date
+);
+go
+
+/*
+insert into hopelist(ownerid, bkid, jointime)
+values(1, 1, '2018-08-20');
+go
+*/
+
+--------------------------------------------------------------------
+
+create table friendlist(
+id integer identity primary key,
+memid integer references member(id),
+friendid integer references member(id),
+jointime date
+);
+
+/*
+insert into friendlist(memid, friendid, jointime)
+values(1, 2, '2018-08-08');
+go
+*/

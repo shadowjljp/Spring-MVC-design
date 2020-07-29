@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--<jsp:useBean id="idSearch" class="bookpage.bookDAO" scope="page" />
+<jsp:setProperty property="getbookid" name="idSearch" value="<%=bookid%>" />-->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>享讀 - 我贊助的專案</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        .booktitle {
+            color: #8b6257
+        }
+
+        tr:hover {
+            background-color: #deb887;
+            color: #00f
+        }
+
+        td:hover {
+            text-decoration: underline;
+            color: #00f
+        }
+
+        table {
+            border: 1;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center
+        }
+
+        .eventtitle {
+            width: 900px
+        }
+
+        table td,
+        th {
+            height: 50px;
+            width: 200px;
+            vertical-align: middle
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <section>
+            <h3 class="booktitle">您輸入的關鍵字為：</h3>
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>狀態</th>
+                        <th>專案名稱</th>
+                        <th>編號</th>
+                        <th>開始日期</th>
+                        <th>結束日期</th>
+                        <th>編輯</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>待審</td>
+                        <td>
+                            <a href="../../index.html">FNG寶特袋｜100%回收寶特瓶製作｜回收者友善收購計劃</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>排程</td>
+                        <td>
+                            <a href="../../index.html">職場原始人，進化吧！拒當野茫人！讓你征服蠻荒職場的8堂課！</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>進行</td>
+                        <td>
+                            <a href="../../index.html">UYAS Play 頑.音響｜音樂與風格由你混搭</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>結束</td>
+                        <td>
+                            <a href="../../index.html"> 寄養家庭的安心水果 ─ 無毒農社會企業計劃</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>待審</td>
+                        <td>
+                            <a href="../../index.html">【會長大的好事】 2018 NPOst 公益交流站年會《鐵粉趴》－ 鐵粉召集中！</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>待審</td>
+                        <td>
+                            <a href="../../index.html">好哲琴拾音器版|使用無極限的全新體驗</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>排程</td>
+                        <td>
+                            <a href="../../index.html">新竹彩虹文化祭-看見城市中的多元性別 </td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>進行</td>
+                        <td>
+                            <a href="../../index.html">酷兒。光影點點開｜2018(台灣國際)酷兒影展+愛深耕性別電影社區放映計畫</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>結束</td>
+                        <td>
+                            <a href="../../index.html">華人音樂 Ｘ 臺灣街舞『跳』上世界舞台 - MANIAC出征HHI世界街舞總決賽</td>
+                        <td>20181003009</td>
+                        <td>2014-06-06</td>
+                        <td>2014-06-06</td>
+                        <td>
+                            <input type="submit" value="編輯">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>

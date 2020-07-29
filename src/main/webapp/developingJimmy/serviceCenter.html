@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/main.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <style>
+    /* body{
+        background-color: black;
+    } */
+    .contactus{
+        margin: auto;
+        margin-top: 10%;
+        margin-left: 20%;
+        margin-bottom: 20%;
+        width: 80%;
+        height: 80vh;;
+        background-color: #FFF9EF;
+        font-family: 微軟正黑體;
+    }
+    .h3{
+
+    }
+    .h5{
+    }
+    .p{
+        width: 80%;
+    }
+    .text{
+        width: 100%;
+        height: 100%;
+    }
+    .select{
+        width: 15%;
+        font-size: 1.5em;
+    }
+    .textarea{
+        width: 80%;
+        height: 80%;
+        font-size: 1.5em;
+    }
+    .button{
+        margin-top: 1.5em;
+        font-size: 1.5em;
+    }
+    </style>
+</head>
+<body>
+
+        <div class="wrapper">
+                <!-- wrapper start -->
+        
+                <header>
+                        <nav>
+            
+                            <ul class="menu">
+                                <div class="logo">
+                                    <a href="../component/index.jsp">
+                                        <img src="../component/images/ReadShareLOGO.png" alt="">
+                                    </a>
+                                </div>
+                                <a href="首頁">
+                                    <div class="logoSp">享讀</div>
+                                </a>
+                                <div class="divSerch">
+                                    <form action="pages/searchedPage.jsp" method="get">
+                                        <span>
+                                            <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋書名/作者/ISBN">
+                                            <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                            <!-- <span>書名</span> -->
+                                            <input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                            <label for="bookName">書名</label>
+                                            <!-- <span>作者</span> -->
+                                            <input type="radio" name="tag" id="authorName" value="authorName">
+                                            <label for="authorName">作者</label>
+                                            <!-- <span>ISBN</span> -->
+                                            <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                            <label for="bookISBN">ISBN</label>
+                                        </span>
+            
+                                        <button class="search-btn" type="submit" name="searchAction">
+                                            <img src="../component/images/searchBT.png" alt="">
+                                        </button>
+                                    </form>
+                                </div>
+            
+                                <img src="../component/images/MemberPhoto/Howard.jpg" alt="">
+            
+            
+                                <li>
+                                    <a href="pages/ShoppingCart.jsp">
+                                        <img src="../component/images/cart_enpty.png" alt="">
+                                        <span>(0)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="pages/signin.jsp">會員中心</a>
+                                </li>
+                                <li>
+                                    <!-- <a href="pages/signin.jsp">登入</a> -->
+                                    <a href="pages/signin.jsp">登出</a>
+                                </li>
+                                <li>
+                                    <!-- <a href="pages/Member.jsp">註冊</a> -->
+                                    <a href="pages/Member.jsp">個人書櫃</a>
+                                </li>
+            
+            
+            
+                            </ul>
+            
+                            <ul class="menu2">
+                                <li>
+                                    <a href="#">電子書</a>
+                                </li>
+                                <li>
+                                    <a href="#">以書易書</a>
+                                </li>
+                                <li>
+                                    <a href="#">募資</a>
+                                </li>
+                                <li>
+                                    <a href="#">活動</a>
+                                </li>
+                                <li>
+                                    <a href="#">全站分類</a>
+                                </li>
+                                <li>
+                                    <a href="#">排行榜</a>
+                                </li>
+            
+                                <!-- <span class="spSolgan">享讀，與世界分享你的視界。</span>  -->
+                                <span class="spSolgan">
+                                    <!-- <img src="/images/MemberPhoto/Howard.jpg" alt=""> -->
+                                    嗨，Howard，歡迎光臨享讀！
+                                </span>
+            
+                            </ul>
+            
+                        </nav>
+                        <div class="divHeaderSkew"></div>
+                    </header>
+        
+                <div class="container">
+                    <!-- container start -->
+        
+
+    <div class="contactus">
+        <h3 class="h3">聯絡我們</h3>
+        <h5 class="h5">填寫問題表單</h5>
+        <p class="p">正確選擇問題種類，可加速問題判斷與處理時效，若您所需服務內容為退換貨，更改配送地址…等，與訂單相關之服務需求，
+            建議您可以利用線上客服直接由專人為您服務。</p>
+    <div class="text">
+        <select name="problemChoose" id="" class="select">
+            <option value="">商品詢問</option>
+            <option value="">訂單詢問</option>
+            <option value="">活動詢問</option>
+            <option value="">募資詢問</option>
+            <option value="">廣告詢問</option>
+            <option value="">網站意見提供</option>
+            <option value="">其他意見提供</option>
+        </select>
+        <br>
+        <br>
+        <textarea name="customerinsert" id="" class="textarea">
+        </textarea>
+        <br>
+        <button class="button">送出</button>
+
+
+
+    </div>
+
+
+    </div>
+
+            <!-- container end -->
+        </div>
+        <footer>
+                <div class="divFooterSkew"></div>
+                <div>
+    
+                    <div class="footerDiv1">
+                        <h6>關於我們</h6>
+                        <ul>
+                            <li>資策會Java就業養成班</li>
+                            <li>期別：EEIT102</li>
+                            <li>指導老師：馬全德</li>
+                        </ul>
+                    </div>
+    
+                    <div class="footerDiv2">
+                        <h6>社群連結</h6>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="../component/images/SocialNetworkIcon/facebook.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../component/images/SocialNetworkIcon/line-me.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../component/images/SocialNetworkIcon/Web-Twitter-alt-3-Metro-icon.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../component/images/SocialNetworkIcon/youtube_v2-512.png" alt="">
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </div>
+    
+                    <div class="footerDiv3">
+                        <h6>小組名單</h6>
+                        <table>
+                            <tr>
+                                <td>吳浩澐（Howard）　</td>
+                                <td>劉安育（Jerry）</td>
+                            </tr>
+                            <tr>
+                                <td>鄭宇軒（Danny）</td>
+                                <td>林晉宇（Jimmy）</td>
+                            </tr>
+                            <tr>
+                                <td>歐松運（Paco）</td>
+                                <td>林偃秋（Ronnie）</td>
+                            </tr>
+    
+                        </table>
+                    </div>
+    
+                </div>
+            </footer>
+        <!-- wrapper end -->
+    </div>
+
+</body>
+</html>

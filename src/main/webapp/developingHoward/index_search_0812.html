@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../component/css/base.css">
+    <link rel="stylesheet" href="../component/css/layout.css">
+    <link rel="stylesheet" href="../component/css/headerAndFooter.css">
+    <!-- <link rel="stylesheet" href="../component/css/main.css"> -->
+    <script src="../component/js/jquery-3.3.1.min.js"></script>
+
+
+    <style>
+        .divSearchInfo {
+            height: 50px;
+            line-height: 50px;
+
+        }
+
+        .divProductListRow {
+            width: 90vw;
+            height: 30vh;
+            /* background-color: green; */
+            margin-bottom: 10px;
+        }
+
+        .divProductImg>a>img {
+            height: 30vh;
+            /* width: 15vw; */
+            position: absolute;
+        }
+
+        .divProductInfo {
+            height: 30vh;
+            width: 60vw;
+            /* background-color: red; */
+            position: absolute;
+            left: 15vw;
+            padding-left: 10px;
+            overflow: hidden;
+
+
+        }
+
+        .divProductInfo>a>h5 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .divProductInfo>a>h6 {
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        .divProductInfo>span {
+            margin-top: 5px
+        }
+
+        .divProductInfo>p {
+            margin-top: 5px;
+            color: black;
+            line-height: 25px;
+        }
+
+        .divListFn {
+            height: 30vh;
+            width: 15vw;
+            /* background-color: blue; */
+            position: absolute;
+            right: 0px;
+            background-color: rgb(233, 201, 192);
+            text-align: center;
+        }
+
+        .divListFn img {
+
+            height: 40px;
+            display: block;
+            margin: auto;
+        }
+
+        .divListFn>div {
+            position: relative;
+            top: 10%;
+        }
+
+        .divListFn>div+div {
+            position: relative;
+            top: 25%;
+        }
+      
+
+        .divListFn>div>div {
+            display: inline;
+
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="divSearchInfo">
+                <span>
+                    關鍵字 : 柯文哲 共找到 10 筆資料
+                </span>
+            </div>
+
+
+            <div class="divProductListRow">
+                <div class="divProductImg">
+                    <a href="">
+                        <img src="../component/images/book/bk9_210x315.jpg" alt="">
+                    </a>
+                </div>
+                <div class="divProductInfo">
+                    <a href="">
+                        <h5>我是書名</h5>
+                    </a>
+                    <a href="">
+                        <h6>作者：我是作者</h6>
+                    </a>
+
+                    <span>出版社：我是出版社 出版日期：日期 定價：定價</span>
+                    <p>我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹 我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹
+                        我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹
+                        我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹我是很多很多的介紹
+                    </p>
+                </div>
+
+                <div class="divListFn">
+
+                    <div>
+                        <div>願望清單</div>
+                        <img src="../component/images/like.png" alt="">
+                    </div>
+
+                    <div>
+                        <div>加入購物車</div>
+                        <img src="../component/images/cart_cargo.png" alt="">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+
+        $(
+            $(".divListFn img[src$='like.png']").css({ "filter": "grayscale(100%)" })
+                .click(
+                    function () {
+                        var tempObj1 = $(this);
+                        // alert(tempObj1.attr('style'));
+                        if (tempObj1.attr('style').indexOf("grayscale(100%)") != -1) {
+                            $(this).css({ "filter": "grayscale(0%)" })
+                        } else {
+                            $(this).css({ "filter": "grayscale(100%)" })
+                        }
+                    })
+        )
+    </script>
+</body>
+
+</html>

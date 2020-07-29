@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--<jsp:useBean id="idSearch" class="bookpage.bookDAO" scope="page" />
+<jsp:setProperty property="getbookid" name="idSearch" value="<%=bookid%>" />-->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>享讀 - 我參加的活動</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../../component/images/ReadShare.ico">
+    <style>
+        body {
+            font-family: 微軟正黑體
+        }
+
+        table {
+            font-size: 1em
+        }
+
+        .ui-draggable,
+        .ui-droppable {
+            background-position: top
+        }
+    </style>
+    <link rel="stylesheet" href="../../component/css/style.css">
+	<link rel="stylesheet" href="../../component/css/base.css">
+	<link rel="stylesheet" href="../../component/css/layout.css">
+    <link rel="stylesheet" href="../../component/css/headerAndFooter.css">
+    <link rel="stylesheet" href="../../component/css/search.css">
+
+
+
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <div class="logo">
+                        <a href="../component/index.jsp">
+                            <script pagespeed_no_defer="">//<![CDATA[
+                                (function () { var g = this, h = function (b, d) { var a = b.split("."), c = g; a[0] in c || !c.execScript || c.execScript("var " + a[0]); for (var e; a.length && (e = a.shift());)a.length || void 0 === d ? c[e] ? c = c[e] : c = c[e] = {} : c[e] = d }; var l = function (b) { var d = b.length; if (0 < d) { for (var a = Array(d), c = 0; c < d; c++)a[c] = b[c]; return a } return [] }; var m = function (b) { var d = window; if (d.addEventListener) d.addEventListener("load", b, !1); else if (d.attachEvent) d.attachEvent("onload", b); else { var a = d.onload; d.onload = function () { b.call(this); a && a.call(this) } } }; var n, p = function (b, d, a, c, e) { this.f = b; this.h = d; this.i = a; this.c = e; this.e = { height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth }; this.g = c; this.b = {}; this.a = []; this.d = {} }, q = function (b, d) { var a, c, e = d.getAttribute("pagespeed_url_hash"); if (a = e && !(e in b.d)) if (0 >= d.offsetWidth && 0 >= d.offsetHeight) a = !1; else { c = d.getBoundingClientRect(); var f = document.body; a = c.top + ("pageYOffset" in window ? window.pageYOffset : (document.documentElement || f.parentNode || f).scrollTop); c = c.left + ("pageXOffset" in window ? window.pageXOffset : (document.documentElement || f.parentNode || f).scrollLeft); f = a.toString() + "," + c; b.b.hasOwnProperty(f) ? a = !1 : (b.b[f] = !0, a = a <= b.e.height && c <= b.e.width) } a && (b.a.push(e), b.d[e] = !0) }; p.prototype.checkImageForCriticality = function (b) { b.getBoundingClientRect && q(this, b) }; h("pagespeed.CriticalImages.checkImageForCriticality", function (b) { n.checkImageForCriticality(b) }); h("pagespeed.CriticalImages.checkCriticalImages", function () { r(n) }); var r = function (b) { b.b = {}; for (var d = ["IMG", "INPUT"], a = [], c = 0; c < d.length; ++c)a = a.concat(l(document.getElementsByTagName(d[c]))); if (0 != a.length && a[0].getBoundingClientRect) { for (c = 0; d = a[c]; ++c)q(b, d); a = "oh=" + b.i; b.c && (a += "&n=" + b.c); if (d = 0 != b.a.length) for (a += "&ci=" + encodeURIComponent(b.a[0]), c = 1; c < b.a.length; ++c) { var e = "," + encodeURIComponent(b.a[c]); 131072 >= a.length + e.length && (a += e) } b.g && (e = "&rd=" + encodeURIComponent(JSON.stringify(s())), 131072 >= a.length + e.length && (a += e), d = !0); t = a; if (d) { c = b.f; b = b.h; var f; if (window.XMLHttpRequest) f = new XMLHttpRequest; else if (window.ActiveXObject) try { f = new ActiveXObject("Msxml2.XMLHTTP") } catch (k) { try { f = new ActiveXObject("Microsoft.XMLHTTP") } catch (u) { } } f && (f.open("POST", c + (-1 == c.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(b)), f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), f.send(a)) } } }, s = function () { var b = {}, d = document.getElementsByTagName("IMG"); if (0 == d.length) return {}; var a = d[0]; if (!("naturalWidth" in a && "naturalHeight" in a)) return {}; for (var c = 0; a = d[c]; ++c) { var e = a.getAttribute("pagespeed_url_hash"); e && (!(e in b) && 0 < a.width && 0 < a.height && 0 < a.naturalWidth && 0 < a.naturalHeight || e in b && a.width >= b[e].k && a.height >= b[e].j) && (b[e] = { rw: a.width, rh: a.height, ow: a.naturalWidth, oh: a.naturalHeight }) } return b }, t = ""; h("pagespeed.CriticalImages.getBeaconData", function () { return t }); h("pagespeed.CriticalImages.Run", function (b, d, a, c, e, f) { var k = new p(b, d, a, e, f); n = k; c && m(function () { window.setTimeout(function () { r(k) }, 0) }) }); })(); pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'http://paco.tw/proj/developing/pages/meetup.html', 'YddRYU7ik1', true, false, 'RNVpNdsuiZk');
+//]]></script>
+                            <img src="http://paco.tw/proj/developing/component/images/xReadShareLOGO.png.pagespeed.ic.BYePT4vVJ3.png"
+                                alt="" pagespeed_url_hash="3469459935" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                        </a>
+                    </div>
+                    <a href="首頁">
+                        <div class="logoSp">享讀</div>
+                    </a>
+                    <div class="divSerch">
+                        <form action="pages/searchedPage.jsp" method="get">
+                            <span>
+                                <input class="search-txt" type="text" name="keyWordPage" placeholder="  搜尋書名/作者/ISBN">
+                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                <!-- <span>書名</span> -->
+                                <input type="radio" name="tag" id="bookName" value="bookName" checked="true">
+                                <label for="bookName">書名</label>
+                                <!-- <span>作者</span> -->
+                                <input type="radio" name="tag" id="authorName" value="authorName">
+                                <label for="authorName">作者</label>
+                                <!-- <span>ISBN</span> -->
+                                <input type="radio" name="tag" id="bookISBN" value="bookISBN">
+                                <label for="bookISBN">ISBN</label>
+                            </span>
+
+                            <button class="search-btn" type="submit" name="searchAction">
+                                <img src="http://paco.tw/proj/developing/component/images/xsearchBT.png.pagespeed.ic.2JGQPTpHSR.png" alt="" pagespeed_url_hash="1236607913"
+                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            </button>
+                        </form>
+                    </div>
+
+                    <li>
+                        <a href="pages/ShoppingCart.jsp">
+                            <img src="http://paco.tw/proj/developing/component/images/xcart_enpty.png.pagespeed.ic.QWdOJTFc3J.png" alt="" pagespeed_url_hash="493119032"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <span>(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">會員中心</a>
+                    </li>
+                    <li>
+                        <a href="pages/signin.jsp">登入</a>
+                    </li>
+                    <li>
+                        <a href="pages/Member.jsp">註冊</a>
+                        <!-- <a href="pages/Member.jsp">個人書櫃</a> -->
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="menu2">
+                    <li>
+                        <a href="#">電子書</a>
+                    </li>
+                    <li>
+                        <a href="#">以書易書</a>
+                    </li>
+                    <li>
+                        <a href="#">募資</a>
+                    </li>
+                    <li>
+                        <a href="#">活動</a>
+                    </li>
+                    <li>
+                        <a href="#">全站分類</a>
+                    </li>
+                    <li>
+                        <a href="#">排行榜</a>
+                    </li>
+
+                    <span class="spSolgan">享讀，與世界分享你的視界。</span>
+
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <section>
+            <h3 class="booktitle">活動列表</h3>
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>報名狀態</th>
+                        <th>活動名稱</th>
+                        <th>開始時間</th>
+                        <th>結束時間</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>已截止</td>
+                        <td>
+                            <a href="https://datatables.net/examples/basic_init/alt_pagination.html">Alternative pagination</a>
+                        </td>
+                        <td>2013-03-06</td>
+                        <td>2014-06-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="我要報名">
+                        </td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2015-11-06</td>
+                        <td>2016-12-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>已額滿</td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2016】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2016-11-06</td>
+                        <td>2017-12-06</td>
+                    </tr>
+                    <tr>
+                        <td>已截止</td>
+                        <td>
+                            <a href="https://datatables.net/examples/basic_init/alt_pagination.html">Alternative pagination</a>
+                        </td>
+                        <td>2013-03-06</td>
+                        <td>2014-06-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="我要報名">
+                        </td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2015-11-06</td>
+                        <td>2016-12-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>已額滿</td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2016】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2016-11-06</td>
+                        <td>2017-12-06</td>
+                    </tr>
+                    <tr>
+                        <td>已截止</td>
+                        <td>
+                            <a href="https://datatables.net/examples/basic_init/alt_pagination.html">Alternative pagination</a>
+                        </td>
+                        <td>2013-03-06</td>
+                        <td>2014-06-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="我要報名">
+                        </td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2015-11-06</td>
+                        <td>2016-12-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>已額滿</td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2016】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2016-11-06</td>
+                        <td>2017-12-06</td>
+                    </tr>
+                    <tr>
+                        <td>已截止</td>
+                        <td>
+                            <a href="https://datatables.net/examples/basic_init/alt_pagination.html">Alternative pagination</a>
+                        </td>
+                        <td>2013-03-06</td>
+                        <td>2014-06-06</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="我要報名">
+                        </td>
+                        <td>
+                            <a href="http://paco.tw/proj/">【2015】107-1 國際文化村 Intercultural Village (10月份)</a>
+                        </td>
+                        <td>2015-11-06</td>
+                        <td>2016-12-06</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>

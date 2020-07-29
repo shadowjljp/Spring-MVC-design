@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/message.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-ui-effects.min.js"></script>
+    <script src="/js/jquery-ui-Interactions.min.js"></script>
+</head>
+
+<body>
+    <!-- 整個即時通元件都包覆在這裡 -->
+    <div id="idMsgCompWrapper" class="msgCompWrapper">
+
+
+        <div id="idDivMsgTitleBar" class="divMsgTitleBar">
+            <span>享讀-即時客服</span>
+        </div>
+
+        <div id="idDivMsgBoxContent" class="divMsgBoxContent">
+            <div class="divMsgBoxContentSender">
+                <p>123</p>
+            </div>
+
+            <div class="divMsgBoxContentSender">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentReceiver">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentSender">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+
+            <div class="divMsgBoxContentReceiver">
+                <p>我是一堆文字我是一堆文字我是一堆文字我是一堆文字</p>
+            </div>
+        </div>
+
+
+        <div id="idDivMsgInputRange" class="divMsgInputRange">
+
+            <div id="idDivMsgInputBox" class="divMsgInputBox" contenteditable="true"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
+<script>
+
+    $(function () {
+        $('#idDivMsgInputBox').keydown(
+            function (e) {
+                // alert(e.which);
+                if (e.which == 13) {
+                    // alert('enter事件 後續觸發文字送出')
+                    alert($(this).text());
+                    $(this).text("");
+                }
+            }
+        );
+
+        $('#idDivMsgTitleBar').click(
+            function () {
+                // alert(123);
+                $('#idDivMsgBoxContent').toggle();
+                $('#idDivMsgInputRange').toggle();
+
+                if ($(this).hasClass('divMsgTitleBar')) {
+                    $(this).switchClass('divMsgTitleBar', 'divMsgTitleBar2', 400);
+                } else {
+                    $(this).switchClass('divMsgTitleBar2', 'divMsgTitleBar', 0);
+                }
+            }
+        );
+
+        // 
+
+
+        
+
+    });
+
+
+</script>
+
+</html>
